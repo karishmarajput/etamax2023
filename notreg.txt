@@ -1,0 +1,28 @@
+import pandas as pd
+import numpy as np
+data = pd.read_csv('path of the csv')
+datacri=data[['roll_no','name','criteria','phone_no','email']]
+list=[]
+for i,j in datacri.iterrows():
+    print(datacri.roll_no[i])
+    print(datacri.name[i])
+    print(datacri.criteria[i])
+    print(datacri.phone_no[i])
+    print(datacri.email[i])
+    newstr=datacri.criteria[i]
+    newstr=newstr.replace("{","")
+    newstr=newstr.replace("}","")
+    newstr=newstr.replace('"',"")
+    newstr=newstr.replace(',',"")
+    newstr=newstr.replace(':',"")
+    newstr=newstr.split()
+    print(newstr[1],newstr[3],newstr[5])
+    first=int(newstr[1]);
+    third=int(newstr[5])
+    if(first+third>=2):
+        print('Nice')
+    else:
+        list.append([datacri.roll_no[i],datacri.name[i],datacri.phone_no[i],datacri.email[i]])
+    print('__________________')
+pd.DataFrame(list).to_csv('not_registeredfgg.csv',index_label="Index",header=['Roll-No','Name','Phone_no','Email'])
+datanew=pd.read_csv('not_registeredfgg.csv')
