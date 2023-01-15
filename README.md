@@ -49,7 +49,7 @@ College Event Registration Website.
       python manage.py runserver
       ```
 
-### Frontend
+#### Frontend
   - Development
 	Running locally
 
