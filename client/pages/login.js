@@ -48,11 +48,21 @@ export default function Login(props) {
               >
                 Login
               </Tab>
-              
+              <Tab
+                _selected={{ color: "white", bg: "purple.800" }}
+                fontSize={"xl"}
+                color="purple.800"
+                _focus={{ outline: "none!important" }}
+              >
+                Register
+              </Tab>
             </TabList>
             <TabPanels>
               <TabPanel>
                 <LoginForm />
+              </TabPanel>
+              <TabPanel>
+                <LoginOtherColleges />
               </TabPanel>
             </TabPanels>
           </Tabs>
