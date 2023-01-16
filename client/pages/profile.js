@@ -132,6 +132,7 @@ export default function Profile(props) {
       .confirm(OTP)
       .then((stuff) => {
         console.log(stuff);
+        console.log(profile.phone_no+"phone")
         setPhoneSet(true);
         toast({
           title: "Phone verification succesful",
@@ -174,6 +175,7 @@ export default function Profile(props) {
   }
 
   async function updateProfile() {
+    console.log("Update")
     await axios({
       url: `${API_BASE_URL}/u/avatar/update/`,
       method: "POST",
@@ -185,11 +187,16 @@ export default function Profile(props) {
           "Token " + JSON.parse(localStorage.getItem("eta_user")).token,
       },
     }).catch((e)=>console.log(e));
+
     await axios({
       url: `${API_BASE_URL}/u/update/`,
       method: "POST",
       data: {
+        token: profile.token,
         name: profile.fname + " " + profile.lname,
+        phone_no: profile.phone_no,
+        semester: profile.semester
+
       },
       headers: {
         Authorization:
@@ -348,11 +355,16 @@ export default function Profile(props) {
                     <Select
                       placeholder="Select Semester"
                       // readOnly or disabled -> which one to choose ?
-                      readOnly
+                      // readOnly
                       value={profile.semester}
-                      
+                      onChange={(e) =>
+                        setProfile({
+                          ...profile,
+                          semester: Number(e.target.value),
+                        })
+                      }
                     >
-                      {[1, 3, 5, 7].map((sem) => (
+                      {[2, 4, 6, 8].map((sem) => (
                         <option key={sem} value={sem}>
                           Semester {sem}
                         </option>
@@ -377,9 +389,11 @@ export default function Profile(props) {
                           setProfile({
                             ...profile,
                             phone_no: "+91" + e.target.value,
+                            
                           })
                         }
                       />
+                      
                       <InputRightElement>
                         {editPhone || (
                           <EditIcon

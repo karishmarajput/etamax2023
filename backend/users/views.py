@@ -69,7 +69,7 @@ class UserUpdate(APIView):
     
     name = request.data['name']
     # department = request.data['department']
-    # semester = request.data['semester']
+    semester = request.data['semester']
 
     # if name == "" or department not in DEPARTMENTS or semester < 0 or semester > 8:
     #   return JsonResponse({"detail": "Invalid Fields", "success": False}, status=400)
@@ -78,6 +78,7 @@ class UserUpdate(APIView):
       return JsonResponse({"detail": "Invalid Fields", "success": False}, status=400)
 
     user.name = name
+    user.semester = semester
     # user.department = department
     # user.semester = semester
     
