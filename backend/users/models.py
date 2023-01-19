@@ -115,7 +115,7 @@ def make_user_when_approved(sender, instance, created, **kwargs):
 
           Login here: https://etamax.fcrit.ac.in/login
         """,
-        'etamax2k22@hotmail.com',
+        'vinayak4267@outlook.com',
         [instance.email],
         fail_silently=False,
       )

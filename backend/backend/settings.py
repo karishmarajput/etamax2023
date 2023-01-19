@@ -170,11 +170,11 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # SMTP settings
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'smtp.office365.com'
+EMAIL_HOST = 'SMTP.outlook.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-EMAIL_HOST_USER = os.getenv("SMTP_EMAIL")
-EMAIL_HOST_PASSWORD = os.getenv("SMTP_PASSWORD")
+EMAIL_HOST_USER = 'vinayak4267@outlook.com'
+EMAIL_HOST_PASSWORD = "Password"
 
 
 # MATOR SETTINGS
