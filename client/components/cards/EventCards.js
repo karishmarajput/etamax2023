@@ -430,6 +430,31 @@ export default function EventCard({ event }) {
                 )}
               </Box>
             </Flex>
+            <Flex
+              color="purple.400"
+              className="listMarginLeft"
+              fontSize={{ base: "12pt", md: "17pt" }}
+              flexDirection="column"
+              p="10px"
+            >
+              <b style={{ marginLeft: "10px" }}>Event Rules</b>
+              <Box p="10px">
+                {console.log(event.event_rules)}
+                {event.event_rules ? (
+                  
+                  <ReactMarkdown
+                    components={{
+                      li: ({ node, ordered = false, ...props }) => (
+                        <li style={{ listStyleType: "disc" }} {...props} />
+                      ),
+                    }}
+                    children={event.event_rules}
+                  />
+                ) : (
+                  "No description"
+                )}
+              </Box>
+            </Flex>
             <Flex p="15px" gridGap="5" flexDir="column">
               {event.size > 1 && (
                 <Text
@@ -455,6 +480,14 @@ export default function EventCard({ event }) {
               >
                 Event price:{" "}
                 {event.entry_fee != 0 ? `${event.entry_fee} Rs` : "Free"}
+              </Text>
+              <Text
+                fontSize={{ base: "12pt", md: "18pt" }}
+                color="purple.400"
+                fontWeight="bold"
+              >
+                prize:{" "}
+                {event.prize_money}
               </Text>
             </Flex>
             {/* {true &&  event.team_size > 1  true && ( */}

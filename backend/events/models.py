@@ -23,7 +23,7 @@ class Event(models.Model):
   end = models.TimeField(_("End Time"), max_length=5, blank=False)
   title = models.CharField(_("Event Title"), max_length=256,blank=False)
   description = MartorField(_("Event Description"), blank=False)
-  # description = models.TextField(_("Event Description"), blank=False)
+  event_rules = models.TextField(_("Event Rules"), blank=False,default="null")
   is_featured = models.BooleanField("Is Featured", default=False)
   is_fcrit_only = models.BooleanField("Is Event only for FCRIT Students", default=False)
   whatsapp_link = models.URLField(_("Whatsapp Link"), blank=True, null=True)
@@ -34,8 +34,8 @@ class Event(models.Model):
   is_seminar = models.BooleanField(_("Is Event a Seminar"), default=False, blank=False)
   team_size = models.IntegerField(_("Team Size"), default=1)
   is_team_size_strict = models.BooleanField(_("Is Team Size Strict"), blank=False)
-  entry_fee = models.IntegerField(_("Entry Fee"), blank=False, default="[100, 200, 300]")
-  prize_money = models.TextField(_("Prize Money JSON"))
+  entry_fee = models.IntegerField(_("Entry Fee"), blank=False, default=0)
+  prize_money = models.TextField(_("Prize Money JSON"), blank=False, default=0)
 
 
 
