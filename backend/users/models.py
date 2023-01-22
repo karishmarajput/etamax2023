@@ -119,6 +119,13 @@ def make_user_when_approved(sender, instance, created, **kwargs):
         [instance.email],
         fail_silently=False,
       )
+      import csv 
+     
+      rows = [ user.name, user.roll_no,user.email,pwd,user.phone_no,user.department,user.semester,user.college] 
+      f = open('/home/karishma/Documents/etamax2023/backend/users/reg_records.csv', 'a')
+      writer = csv.writer(f)
+      writer.writerow(rows)
+      f.close()
       user.save()
     except Exception as e:
       print(f"Error creating User: {instance.email}#{new_roll_no}")
