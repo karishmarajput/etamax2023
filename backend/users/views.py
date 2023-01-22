@@ -184,7 +184,7 @@ class UserCheckout(APIView):
     def check_criteria(user) -> bool:
       criteria = json.loads(user.criteria)
       print(criteria)
-      if criteria['C'] < 2 and criteria['S'] < 1:
+      if criteria['C'] > 1:
         return False
       else:
         return True
@@ -196,7 +196,7 @@ class UserCheckout(APIView):
       return JsonResponse({"detail": "Enter a Valid Transaction ID", "success": False},status=400)
 
     if user.is_from_fcrit and check_criteria(user):
-      return JsonResponse({"detail": "Criteria Not Satisfied: Atleast Two Cultural & One Sports Event !", "success": False}, status=400)
+      return JsonResponse({"detail": "Criteria Not Satisfied: Atleast One Cultural!", "success": False}, status=400)
 
     donation = request.data.get('donation_amount', 0)
     if donation and int(donation) < 0:
