@@ -58,35 +58,22 @@ class UserRequestAdmin(admin.ModelAdmin):
 class ParticipationAdmin(admin.ModelAdmin):
   search_fields = ('part_id', 'team_name', 'transaction__upi_transaction_id', 'transaction__transaction_id', 'members__name', 'members__roll_no', 'members__email', 'event__title')
   list_display = ['part_id', 'team_name', 'event', 'transaction', 'is_verified']
-  list_filter = ('is_verified',)
-
+  list_filter = ('is_verified', 'event__title')
   actions = ['export_as_csv']
 
   @admin.action(description="Download Csv")
   def export_as_csv(self, request, queryset):
     model = queryset.model
+    qs = Participation.objects.prefetch_related(
+        'members'
+    )
     response = HttpResponse(content_type='text/csv')
     response['Content-Disposition'] = 'attachment; filename=%s.csv' % slugify(model.__name__)
     writer = csv.writer(response)
-    fields= None
-    # Write headers to CSV file
-    if fields:
-        headers = fields
-    else:
-        headers = []
-        for field in model._meta.fields:
-            headers.append(field.name)
-    writer.writerow(headers)
-    # Write data to CSV file
-    for obj in queryset:
-      row = []
-      for field in headers:
-          if field in headers:
-              val = getattr(obj, field)
-              if callable(val):
-                  val = val()
-              row.append(val)
+    writer.writerow(['Team name','part_id','event','transaction_id','Verified','Members_name'])
+    for rule in qs:
+        writer.writerow(
+            [rule.team_name,rule.part_id,rule.event.title,rule.transaction,rule.is_verified,'|'.join(c.name+'_'+str(c.roll_no) for c in rule.members.all())]
+        )
 
-      writer.writerow(row)
-    # Return CSV file to browser as download
     return response
