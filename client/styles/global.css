@@ -137,3 +137,31 @@ body::-webkit-scrollbar-track {
   border: 1px solid rgba(255, 255, 255, 0.41);
 }
 
+/* etamax style */
+marquee{
+  background-color: yellow;
+  height: 2rem;
+  font-weight: bolder;
+  line-height: 2rem;
+}
+
+marquee div{
+  display: flex;
+  justify-content: space-around;
+
+}
+
+
+/* marquee div p{
+  animation: blinker 1.5s linear infinite;
+}
+
+@keyframes blinker {
+  50% {
+      opacity: 0;
+  }
+} */
+
+  
+
+

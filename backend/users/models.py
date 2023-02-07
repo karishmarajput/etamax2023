@@ -103,7 +103,7 @@ def make_user_when_approved(sender, instance, created, **kwargs):
         is_from_fcrit=False,
       )
       user.set_password(pwd)
-      
+      # user.save()
       # SEND EMAIL HERE
       send_mail(
         'ETAMAX 2022 | FCRIT',
@@ -115,7 +115,7 @@ def make_user_when_approved(sender, instance, created, **kwargs):
 
           Login here: https://etamax.fcrit.ac.in/login
         """,
-        'etamax2k22@hotmail.com',
+        'pshrivastavsteam@gmail.com',
         [instance.email],
         fail_silently=False,
       )

@@ -190,6 +190,7 @@ export default function Profile(props) {
       method: "POST",
       data: {
         name: profile.fname + " " + profile.lname,
+        phone_no: profile.phone_no
       },
       headers: {
         Authorization:
