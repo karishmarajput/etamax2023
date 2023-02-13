@@ -1,6 +1,7 @@
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 import Marquee from "./marquee";
+
 import { Flex } from "@chakra-ui/react";
 import { useEffect } from "react";
 import { API_BASE_URL } from "../../config";
@@ -40,6 +41,7 @@ export default function Layout({ children, scrollYVar }) {
     <>
     <Marquee/>
       <Navbar scrollyvar={scrollYVar} />
+      
       <Flex
         id="blossom-container"
         bg="transparent"
@@ -49,7 +51,9 @@ export default function Layout({ children, scrollYVar }) {
       >
         {children}
       </Flex>
+      
       <Footer />
     </>
   );
+
 }

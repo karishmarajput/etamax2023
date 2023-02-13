@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Flex, Center, Heading, Box } from "@chakra-ui/react";
 import EventCards from "../cards/FeaturedEventCard";
 import Carousal from "./Carousal";
+import Featured from "../layout/featured";
 
 export default function FeaturedEvents({ events }) {
   const [eventList, setEventList] = useState([]);
@@ -45,6 +46,7 @@ export default function FeaturedEvents({ events }) {
             Featured Events
           </Heading>
         </Box>
+        <Featured/>
         <Center borderRadius={"1rem"} overflow="hidden" gridGap={"3"}>
           <Carousal
             allowPagination={true}
