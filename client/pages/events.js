@@ -224,10 +224,7 @@ export default function Events(props) {
                   color="black.800"
                   
                 >
-                  FACES offers you a variety of events to choose from. Feel
-                  free to pick any event of your choice from Cultural
-                  and Sports (Only for FCRIT students), but make sure you follow
-                  the registration criteria.
+
                 </Text>
               </Box>
             </Center>

@@ -12,7 +12,9 @@ import LoginOtherColleges from "../components/login/LoginOtherColleges";
 //import Background from "../components/misc/Background";
 import Head from "next/head";
 import * as cookie from "cookie";
-
+import ToggleSidebar from "../components/layout/ToggleSidebar";
+import Marquee from "../components/layout/Marquee";
+import Footer from "../components/layout/Footer";
 //if (typeof window !== "undefined") {
 //  import("../components/utils/blossom");
 //}
@@ -24,7 +26,8 @@ export default function Login(props) {
         <title>FACES-22 | Login</title>
         <link rel="shortcut icon" href="/images/favicon.ico" />
       </Head>
-      
+      <Marquee/>
+      <ToggleSidebar/>
       <Box
         id="blossom-container"
         w="100vw"
@@ -68,6 +71,7 @@ export default function Login(props) {
           </Tabs>
         </Center>
       </Box>
+      <Footer/>
     </>
   );
 }

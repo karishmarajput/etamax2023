@@ -120,7 +120,7 @@ export default function ToggleSidebar(){
                                 </div>
                             </div>
                             <a className="navbar-brand textNav ">Etamax 2023</a>
-                            <a className="navbar-brand textNav ">Events</a>
+                            <a className="navbar-brand textNav " href="/events">Events</a>
                         </div>
                     </nav>
                     <div className={`sidebar ${isOpen == true ? 'active' : ''}`}>
