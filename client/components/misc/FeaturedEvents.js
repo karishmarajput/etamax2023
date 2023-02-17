@@ -47,13 +47,13 @@ export default function FeaturedEvents({ events }) {
           </Heading>
         </Box>
         <Featured/>
-        <Center borderRadius={"1rem"} overflow="hidden" gridGap={"3"}>
+        {/* <Center borderRadius={"1rem"} overflow="hidden" gridGap={"3"}>
           <Carousal
             allowPagination={true}
             breakpoints={breakpoints}
             items={eventList}
           />
-        </Center>
+        </Center> */}
       </Flex>
     </Center>
   );
