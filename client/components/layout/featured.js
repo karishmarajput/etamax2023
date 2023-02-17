@@ -39,6 +39,12 @@ export default function Featured(){
                     <div class="caption">nhnijkjnjki</div>
                 </div>
             </div>
+            <div class="item">
+                <div class="polaroid">
+                    <img src="https://image.ibb.co/fvekrc/action_adult_art_673649.jpg"/>
+                    <div class="caption">nhnijkjnjki</div>
+                </div>
+            </div>
         </div>
         </featured>
 

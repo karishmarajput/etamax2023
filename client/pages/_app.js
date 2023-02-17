@@ -1,6 +1,7 @@
 import { ChakraProvider } from "@chakra-ui/react";
 import theme from "../styles/theme";
 import "../styles/global.css";
+import "../styles/navbar.css";
 import { useRouter } from "next/router";
 import * as ga from "../libs/ga";
 import { useEffect } from "react";
