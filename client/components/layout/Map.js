@@ -60,7 +60,7 @@ export default function Footer() {
 
         <Center
           flex={1}
-          minW="400px"
+          minW="300px"
           maxW="500px"
           h="auto" 
           justify="center"

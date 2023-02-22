@@ -1,4 +1,3 @@
-import Navbar from "./Navbar";
 import ToggleSidebar from "./ToggleSidebar";
 import Footer from "./Footer";
 import Map from "./Map";

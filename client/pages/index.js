@@ -72,9 +72,9 @@ export default function Home(props) {
   return (
     <>
       <Head>
-        <title>FACES-22</title>
+        <title>ETAMAX-23</title>
         <link rel="shortcut icon" href="/images/favicon.ico" />
-        <meta name="title" content="FACES-22" />
+        <meta name="title" content="ETAMAX-22" />
         <meta
           name="description"
           content="Annual sports and cultural festival organised at F.C.R.I.T"
@@ -86,9 +86,9 @@ export default function Home(props) {
           <Center h="60vh" w="100%" flexDir={"column"}>
             <Box w="80%">
               <Heading color="pink.300" fontSize="6xl">
-                FACES-22{" "}
+                ETAMAX-23{" "}
                 <Text fontSize="8xl" fontFamily="Birthstone Bounce">
-                  Udaan
+                  MONTAGE
                 </Text>
               </Heading> 
             </Box>

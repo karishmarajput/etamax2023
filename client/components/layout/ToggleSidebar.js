@@ -1,5 +1,9 @@
 import React from "react";
-import { ReactDOM } from "react";
+import {AiOutlineHome,AiOutlineShoppingCart} from "react-icons/ai";
+import {CgProfile,CgLogOut,CgLogIn} from "react-icons/cg";
+import {BsCalendar2Event} from 'react-icons/bs';
+import {BiLogIn} from 'react-icons/bi'
+
 import {
     Box,
     Center,
@@ -31,17 +35,7 @@ import {
       </LinkButtons>
     );
   }
-  const ShoppingCartIcon = createIcon({
-    displayName: "shopping cart",
-    viewBox: "0 0 576 512",
-    // path can also be an array of elements, if you have multiple paths, lines, shapes, etc.
-    path: (
-      <path
-        fill="currentColor"
-        d="M528.12 301.319l47.273-208C578.806 78.301 567.391 64 551.99 64H159.208l-9.166-44.81C147.758 8.021 137.93 0 126.529 0H24C10.745 0 0 10.745 0 24v16c0 13.255 10.745 24 24 24h69.883l70.248 343.435C147.325 417.1 136 435.222 136 456c0 30.928 25.072 56 56 56s56-25.072 56-56c0-15.674-6.447-29.835-16.824-40h209.647C430.447 426.165 424 440.326 424 456c0 30.928 25.072 56 56 56s56-25.072 56-56c0-22.172-12.888-41.332-31.579-50.405l5.517-24.276c3.413-15.018-8.002-29.319-23.403-29.319H218.117l-6.545-32h293.145c11.206 0 20.92-7.754 23.403-18.681z"
-      />
-    ),
-  });
+
 
 
 export default function ToggleSidebar(){
@@ -142,7 +136,10 @@ export default function ToggleSidebar(){
                 to="/"
                 nextLink={true}
               >
+                 <Flex gridGap={"4"}>
+                <AiOutlineHome/>
                 Home
+                </Flex>
               </MenuItems>
               <MenuItems
                 isDisabled={false}
@@ -150,17 +147,25 @@ export default function ToggleSidebar(){
                 to="/events"
                 nextLink={true}
               >
+                 <Flex gridGap={"4"}>
+                <BsCalendar2Event/>
                 Events
+                </Flex>
               </MenuItems>
+
               {!loggedIn && (
                 <MenuItems
                   isDisabled={false}
                   color={color}
                   to="/login"
                   nextLink={false}
-                >
+                > 
+                <Flex gridGap={"4"}>
+                  <BiLogIn/>
                   Login
+                  </Flex>
                 </MenuItems>
+                
               )}
               {loggedIn && (
                 <MenuItems
@@ -168,8 +173,10 @@ export default function ToggleSidebar(){
                   color={color}
                   to="/profile"
                   nextLink={false}
-                >
+                > <Flex gridGap={"4"}>
+                  <CgProfile/>
                   Profile
+</Flex>
                 </MenuItems>
               )}
               {loggedIn && (
@@ -179,9 +186,9 @@ export default function ToggleSidebar(){
                   to="/checkout"
                   nextLink={false}
                 >
-                  <Flex gridGap={"1"}>
+                  <Flex gridGap={"4"}>
+                  <AiOutlineShoppingCart />
                     <Box>Checkout</Box>
-                    <ShoppingCartIcon />
                   </Flex>
                 </MenuItems>
               )}
@@ -213,7 +220,11 @@ export default function ToggleSidebar(){
                   }}
                   onClick={handleLogout}
                 >
+                   <Flex gridGap={"4"}>
+                   <CgLogOut/>
                   Logout
+                   </Flex>
+                  
                 </Button>
               )}
             </Stack>
