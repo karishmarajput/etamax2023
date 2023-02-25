@@ -29,6 +29,14 @@ export default function Footer() {
             Karishma
           </Link>
           ,{" "}
+          <Link target="_blank" href="https://github.com/karishmarajput">
+            Agrima
+          </Link>
+          ,{" "}
+          <Link target="_blank" href="https://github.com/karishmarajput">
+            Mahima
+          </Link>
+          ,{" "}
           <Link target="_blank" href="https://github.com/Pauloper1">
             Paul
           </Link>
