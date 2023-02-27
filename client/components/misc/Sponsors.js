@@ -34,9 +34,9 @@ const Sponsors = () => {
 
   return (
     <Center
-      bgGradient={"linear(to-b,rgb(252, 193, 203,0.6),#7A5980)"}
-      pt="5"
-      pb="10"
+      // bgGradient={"linear(to-b,rgb(252, 193, 203,0.6),#7A5980)"}
+      // pt="5"
+      // pb="10"
     >
       <Flex w={["90%", "90%", "90%", "90%"]} flexDir={"column"}>
         <Box my={5}>
