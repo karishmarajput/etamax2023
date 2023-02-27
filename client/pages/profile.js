@@ -212,9 +212,9 @@ export default function Profile(props) {
   }
 
   useEffect(() => {
-    var fname = profile.name.split(" ")[0];
+    var fname = profile?.name?.split(" ")[0];
     var lname =
-      profile.name.split(" ").length == 2 ? profile.name.split(" ")[1] : "";
+      profile?.name?.split(" ")?.length == 2 ? profile?.name?.split(" ")[1] : "";
     setProfile({ ...profile, fname, lname });
   }, []);
 
