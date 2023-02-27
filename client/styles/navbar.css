@@ -3,7 +3,7 @@
 
 /* ---Sidebar css */
 .textNav{
-  color: white!important;
+  color: purple!important;
 }
 .navbarPadding{
     padding-left: 0.5rem !important;
@@ -17,7 +17,7 @@
     transform: rotate(3deg);
 }
 .btnNav {
-    color: white;
+    color: purple;
     background-color: transparent;
     border: 0px;
 }
@@ -25,7 +25,7 @@
     background-color: transparent;
 }
 .sideMenu{
-    background-color: #475f7b;
+    background-color: #EAA16C;
     margin: 0rem !important;
     position: relative;
     top: -7px;
