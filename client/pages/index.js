@@ -9,6 +9,7 @@ import "@fontsource/birthstone-bounce";
 import Sponsors from "../components/misc/Sponsors";
 import FeaturedEvents from "../components/misc/FeaturedEvents";
 import { API_BASE_URL } from "../config";
+import PageDivision from "../components/layout/PageDivision";
 //import DroneEvent from "../components/misc/DroneEvent";
 //import FooterOnTopOfFooter from "../components/misc/FooterOnTopOfFooter";
 
@@ -82,12 +83,12 @@ export default function Home(props) {
       </Head>
       
       <Layout scrollYVar={450}>
-        <Flex bg="transparent" h="100vh" maxW="100vw" flexDirection="column">
-          <Center h="60vh" w="100%" flexDir={"column"}>
+        <Flex bg="transparent" h="50vh" maxW="100vw" flexDirection="column">
+          <Center h="50vh" w="100%" flexDir={"column"}>
             <Box w="80%">
-              <Heading color="pink.300" fontSize="6xl">
+              <Heading color="pink.300" fontSize="4xl">
                 ETAMAX-23{" "}
-                <Text fontSize="8xl" fontFamily="Birthstone Bounce">
+                <Text fontSize="5xl" fontFamily="Birthstone Bounce">
                   MONTAGE
                 </Text>
               </Heading> 
@@ -95,45 +96,11 @@ export default function Home(props) {
         
           
           </Center>
-          <Center
-            h={{
-              base: "calc(30vh - 100px)",
-              lg: "calc(30vh - 100px)",
-            }}
-            w="100%"
-            mt={{ base: "240px", md: "0", lg: "0" }}
-          >
-            <image src="/Montage.png"></image>
-            {/* <Box w="80%"> */}
-              {/* {!over ? (
-                <Text
-                  color={"purple.400"}
-                  fontWeight="bold"
-                  fontSize={{ base: "3xl", lg: "4xl" }}
-                >
-                  Countdown to fun!
-                </Text>
-              ) : (
-                ""
-              )} */}
-              {/* <Text
-                color="purple.300"
-                fontWeight={"500"}
-                fontSize={{ base: "2xl", lg: "2xl" }}
-              >
-                {!over ? `${daysLeft} days left` : "On now!"}
-              </Text> */}
-               {/* <Text
-                mt={3}
-                color={"purple.400"}
-                fontWeight={"800"}
-                fontSize={"5xl"}
-              >
-                
-              </Text> */}
-            {/* </Box> */}
-          </Center>
+          
         </Flex>
+        <div className="pageDivisionDiv">
+        
+        </div>
         
         <FeaturedEvents events={props.events} />
         <Sponsors />

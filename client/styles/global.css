@@ -11,6 +11,24 @@
 .activeSlideBar{
   background-image: url('/menu-bg.png');
 }
+.pageDivisionDiv{
+  width: 100%;
+  height: 50vh;
+  background-image: url('/Montage.png');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+
+}
+.pageDivision{
+  /* width: 100%;
+  height: auto;
+  background-size: contain;
+  background-repeat: no-repeat;
+position: relative;
+bottom: 0px; */
+
+/* object-fit: cover; */
+}
 .eventImgIcon{
   background-image: url('/event-ticket.png') !important;
   width: 5rem;
