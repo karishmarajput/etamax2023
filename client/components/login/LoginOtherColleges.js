@@ -17,17 +17,31 @@ import {
   useToast,
   toast,
 } from "@chakra-ui/react";
-import { useRouter } from "next/router";
-import { useEffect, useState } from "react";
-import { API_BASE_URL } from "../../config";
+import {useRouter} from "next/router";
+import {useEffect, useState} from "react";
+import {API_BASE_URL} from "../../config";
 import Success from "../alerts/Success";
 import * as ga from "../../libs/ga";
 import NextLink from "next/link";
+import {firebase} from "@firebase/app";
+import "@firebase/auth";
+import axios from "axios";
 
 const LoginOtherColleges = () => {
-  var [email, setEmail] = useState("");
-  var [password, setPassword] = useState("");
-  var [isFormValid, setFormValid] = useState(true);
+  const PHONE_VERIFICATION_STATUS = {
+    NOT_SENT: 0,
+    SENT_UNVERIFIED: 1,
+    SENT_VERIFIED: 2
+  }
+
+  const [otpSent, setOtpSent] = useState(false);
+  const [otp, setOtp] = useState("");
+  const [phoneVerification, setPhoneVerification] = useState({
+    status: PHONE_VERIFICATION_STATUS.NOT_SENT,
+    number: "",
+    otp: ""
+  })
+  const [unconfirmedPhone, setUnconfirmedPhone] = useState("");
   const [values, setValues] = useState({
     email: "",
     name: "",
@@ -45,7 +59,7 @@ const LoginOtherColleges = () => {
   const successToast = useToast({
     position: "top-right",
     duration: 3000,
-    render: () => <Success message={"Successfully registered"} />,
+    render: () => <Success message={"Successfully registered"}/>,
     isClosable: true,
   });
 
@@ -64,23 +78,23 @@ const LoginOtherColleges = () => {
     let semester = parseInt(s);
     let phone_no = parseInt(p);
     if (name.trim() == "") {
-      errorToast({ title: "Name is required!" });
+      errorToast({title: "Name is required!"});
       return false;
     }
     if (college.trim() == "") {
-      errorToast({ title: "College is required!" });
+      errorToast({title: "College is required!"});
       return false;
     }
     if (!departments.includes(department.trim())) {
-      errorToast({ title: "Department is required!" });
+      errorToast({title: "Department is required!"});
       return false;
     }
     if (Number.isNaN(semester) || semester < 1 || semester > 8) {
-      errorToast({ title: "Semester should be between 1 and 8!" });
+      errorToast({title: "Semester should be between 1 and 8!"});
       return false;
     }
-    if (Number.isNaN(phone_no) || p.trim().length < 10) {
-      errorToast({ title: "Enter a valid Phone Number!" });
+    if (Number.isNaN(phoneVerification.number) || phoneVerification.number.trim().length < 10 || phoneVerification.status === PHONE_VERIFICATION_STATUS.NOT_SENT) {
+      errorToast({title: "Enter a valid Phone Number or verify Phone Number"});
       return false;
     }
     if (
@@ -101,9 +115,9 @@ const LoginOtherColleges = () => {
   const isRegistered = async (email, phone_no) => {
     let body;
     if (email) {
-      body = { email };
+      body = {email};
     } else {
-      body = { phone_no };
+      body = {phone_no};
     }
     fetch(`${API_BASE_URL}/u/exists/`, {
       method: "POST",
@@ -121,7 +135,7 @@ const LoginOtherColleges = () => {
         }
       })
       .catch((res) => {
-        errorToast({ title: "Something went wrong!" });
+        errorToast({title: "Something went wrong!"});
       });
     return false;
   };
@@ -142,12 +156,12 @@ const LoginOtherColleges = () => {
 
     // check if email is already registered
     if (await isRegistered(email, null)) {
-      errorToast({ title: "Email is already registered!" });
+      errorToast({title: "Email is already registered!"});
       return;
     }
     // check if phone number is already registered
     if (await isRegistered(null, "+91" + p)) {
-      errorToast({ title: "Phone Number is already registered!" });
+      errorToast({title: "Phone Number is already registered!"});
       return;
     }
     // resgister user
@@ -186,11 +200,11 @@ const LoginOtherColleges = () => {
       } else {
         console.log(data);
         for (let x in data.errors) {
-          errorToast({ title: data.errors[x] });
+          errorToast({title: data.errors[x]});
         }
       }
     } catch (err) {
-      errorToast({ title: "Something went wrong!" });
+      errorToast({title: "Something went wrong!"});
     }
   };
 
@@ -203,7 +217,53 @@ const LoginOtherColleges = () => {
     });
   };
 
-  // useEffect(() => console.log(values), [values]);
+  if (!firebase.apps.length) {
+    firebase.initializeApp(JSON.parse(process.env.NEXT_PUBLIC_FIREBASE));
+  } else {
+    firebase.app();
+  }
+
+  function login() {
+    if (!otpSent) {
+      var recaptchaVerifier = new firebase.auth.RecaptchaVerifier(
+        "recaptcha-container",
+        {
+          size: "normal",
+          callback: () => setPhoneVerification((prev) => ({
+            ...prev,
+            status: PHONE_VERIFICATION_STATUS.SENT_UNVERIFIED
+          })),
+        }
+      );
+      firebase
+        .auth()
+        .signInWithPhoneNumber("+91" + phoneVerification.number, recaptchaVerifier)
+        .then((_verify) => (window.verify = _verify))
+        .catch(console.log);
+      return;
+    }
+    console.log("Hello")
+    window.verify
+      .confirm(phoneVerification.otp)
+      .then((stuff) => {
+        setPhoneVerification((prev) => ({
+          ...prev,
+          status: PHONE_VERIFICATION_STATUS.SENT_VERIFIED
+        }))
+        successToast({
+          title: "Phone Verified!",
+          description: "Your phone number has been verified",
+        });
+        firebase
+          .auth()
+          .currentUser.getIdToken(true)
+          .then(async (user) => {
+          }).catch(() => errorToast({title: "An error occured"}));
+      })
+      .catch((stuff) => {
+        errorToast({title: "An error occured"})
+      });
+  }
 
   return (
     <Flex
@@ -337,15 +397,19 @@ const LoginOtherColleges = () => {
             <FormControl isRequired>
               <FormLabel>Phone Number</FormLabel>
               <InputGroup>
-                <InputLeftAddon children="+91" />
+                <InputLeftAddon children="+91"/>
                 {/* <Input type='tel' placeholder='phone number' /> */}
                 <Input
                   type="number"
                   inputMode="numeric"
                   min="0"
-                  value={values.phone_no}
+                  value={phoneVerification.number}
                   name="phone_no"
-                  onChange={handleChange}
+                  onChange={(e) => setPhoneVerification((prev) => ({
+                    ...prev,
+                    status: PHONE_VERIFICATION_STATUS.NOT_SENT,
+                    number: e.target.value
+                  }))}
                   placeholder="Your phone no."
                   _focus={{
                     outline: "none",
@@ -358,6 +422,43 @@ const LoginOtherColleges = () => {
                   }}
                 />
               </InputGroup>
+            </FormControl>
+            <FormControl isRequired display={phoneVerification.status === PHONE_VERIFICATION_STATUS.SENT_VERIFIED || phoneVerification.status === PHONE_VERIFICATION_STATUS.NOT_SENT ? "none" : "block"}>
+              <FormLabel>Verification Code</FormLabel>
+              <InputGroup>
+                <Input
+                  type="number"
+                  inputMode="numeric"
+                  min="0"
+                  value={phoneVerification.otp}
+                  name="otp"
+                  onChange={(e) => setPhoneVerification((prev) => ({
+                    ...prev,
+                    otp: e.target.value
+                  }))}
+                  placeholder="Verification Code"
+                  _focus={{
+                    outline: "none",
+                    borderColor: "purple.400",
+                    borderWidth: "2px",
+                  }}
+                  _hover={{
+                    borderColor: "purple.300",
+                    borderWidth: "2px",
+                  }}
+                />
+              </InputGroup>
+            </FormControl>
+            <FormControl isRequired display={phoneVerification.status === PHONE_VERIFICATION_STATUS.SENT_VERIFIED ? "none" : "block"}>
+              <Button bg="purple.400" onClick={login}
+                      disabled={!(phoneVerification.number.length === 10)}
+                      m={2} color="white">
+                {phoneVerification.status === PHONE_VERIFICATION_STATUS.SENT_UNVERIFIED ? "Verify OTP" : "Verify Phone"}
+              </Button>
+              <Flex
+                id="recaptcha-container"
+                display={phoneVerification.status === PHONE_VERIFICATION_STATUS.NOT_SENT || phoneVerification.status === PHONE_VERIFICATION_STATUS.SENT_UNVERIFIED ? "block" : "none"}
+              />
             </FormControl>
             <Stack spacing={10} pt={2}>
               <Button
