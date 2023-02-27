@@ -40,7 +40,7 @@ import {
 
 export default function ToggleSidebar(){
     const [isOpen, setIsopen] = useState(false);
-    const [color, setColor] = useState("purple.900");
+    const [color, setColor] = useState("purple");
     const [loggedIn, setLoggedIn] = useState(false);
     const step2 = useColorModeValue("300", "200");
     const toast = useToast();
@@ -106,37 +106,36 @@ export default function ToggleSidebar(){
         <>
             <div className=" sideMenu">
                 
-                    <nav className="navbar navbar-expand-lg shadow-md">
-                        <div className="container-fluid p-2">
+                    <nav className="navbar navbarPadding p-0 navbar-expand-lg shadow-md">
+                        <div className="container-fluid">
                         <div className="">
                                 <div className=" btnNav" onClick={ToggleSidebar} >
                                    <HamburgerIcon boxSize={6}/>
                                 </div>
                             </div>
                             <a className="navbar-brand textNav ">Etamax 2023</a>
-                            <a className="navbar-brand textNav " href="/events">Events</a>
+                            <a className="navbar-brand textNav "  href="/events"><img src="/event-ticket.png" className="navbarImg" /></a>
                         </div>
                     </nav>
-                    <div className={`sidebar ${isOpen == true ? 'active' : ''}`}>
+                    
+                    <div className={`activeSlideBar sidebar ${isOpen == true ? 'active' : ''}`}>
             
                         <div className="sd-header">
-                            <h4 className="mb-0">Etamax 2023</h4>
-                            <button onClick={ToggleSidebar}> <CloseIcon /></button>
+                            <h4 className="mb-0 logoHeading">Etamax 2023</h4>
+                            <button className="buttonClose" onClick={ToggleSidebar}> <CloseIcon /></button>
                         </div>
                         <div className="sd-body">
                             <ul>
                             <Stack
-              justify={["center", "center", "center", "center"]}
-              direction={["column", "column", "column", "column"]}
-              pt={[4, 4, 0, 0]}
             >
               <MenuItems
                 isDisabled={false}
                 color={color}
                 to="/"
                 nextLink={true}
+                align="left"
               >
-                 <Flex gridGap={"4"}>
+                 <Flex justify="flex-start"gridGap={"4"}>
                 <AiOutlineHome/>
                 Home
                 </Flex>
@@ -204,12 +203,12 @@ export default function ToggleSidebar(){
                   transition="all 0.3s"
                   backgroundPosition="center"
                   _hover={{
-                    bgColor: `purple.100`,
-                    bgGradient: `radial(circle, transparent 1%, purple.${step2} 1%)`,
-                    bgPos: "center",
-                    backgroundSize: "15000%",
-                    color: "purple.300",
-                    outline: "none",
+                    // bgColor: `purple.100`,
+                    // bgGradient: `radial(circle, transparent 1%, purple.${step2} 1%)`,
+                    // bgPos: "center",
+                    // backgroundSize: "15000%",
+                    // color: "purple.300",
+                    // outline: "none",
                   }}
                   _active={{
                     bgColor: `purple.200`,

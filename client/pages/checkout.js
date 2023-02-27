@@ -37,7 +37,7 @@ export default function Checkout() {
         <link rel="shortcut icon" href="/images/favicon.ico" />
       </Head>
       <Layout>
-      <Background pageName={"Home"} />
+      <Background />
         {user && (
           
           <Center
@@ -60,7 +60,7 @@ export default function Checkout() {
               w={{ base: "97%", lg: "90%" }}
               h={{ base: "95%", lg: "90%" }}
               p="10px"
-              flexDirection={["column", "row"]}
+              flexDirection={["row", "row"]}
               gridGap={"10"}
             >
               <Center

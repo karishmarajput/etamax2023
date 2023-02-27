@@ -5,7 +5,17 @@
 .textNav{
   color: white!important;
 }
-
+.navbarPadding{
+    padding-left: 0.5rem !important;
+  }
+.navbarImg{
+    transform: rotate(-7deg);
+    width: 10rem;
+    height: 3rem;
+}
+.navbarImg:hover{
+    transform: rotate(3deg);
+}
 .btnNav {
     color: white;
     background-color: transparent;

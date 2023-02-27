@@ -93,8 +93,7 @@ export default function Home(props) {
               </Heading> 
             </Box>
         
-            
-
+          
           </Center>
           <Center
             h={{
@@ -104,6 +103,7 @@ export default function Home(props) {
             w="100%"
             mt={{ base: "240px", md: "0", lg: "0" }}
           >
+            <image src="/Montage.png"></image>
             {/* <Box w="80%"> */}
               {/* {!over ? (
                 <Text

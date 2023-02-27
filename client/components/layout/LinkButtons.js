@@ -24,12 +24,12 @@ export default function Component({
       transition="all 0.3s"
       backgroundPosition="center"
       _hover={{
-        bgColor: `purple.100`,
-        bgGradient: `radial(circle, transparent 1%, purple.${step2} 1%)`,
-        bgPos: "center",
-        backgroundSize: "15000%",
-        color: "purple.300",
-        outline: "none",
+        // bgColor: `purple.100`,
+        // bgGradient: `radial(circle, transparent 1%, purple.${step2} 1%)`,
+        // bgPos: "center",
+        // backgroundSize: "15000%",
+        // color: "purple.300",
+        // outline: "none",
       }}
       _active={{
         bgColor: `purple.200`,
