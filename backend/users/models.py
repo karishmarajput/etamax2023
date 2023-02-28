@@ -79,7 +79,11 @@ class UserRequest(models.Model):
 
 @receiver(post_save, sender=UserRequest)
 def make_user_when_approved(sender, instance, created, **kwargs):
+  print('yo works')
+  print(created)
+  print(instance.is_approved)
   if not created and instance.is_approved:
+    print('in')
     if User.objects.filter(email=instance.email).exists():
       return
 
@@ -103,10 +107,11 @@ def make_user_when_approved(sender, instance, created, **kwargs):
         is_from_fcrit=False,
       )
       user.set_password(pwd)
+      print(user)
       # user.save()
       # SEND EMAIL HERE
       send_mail(
-        'ETAMAX 2022 | FCRIT',
+        'ETAMAX 2023 | FCRIT',
         f"""
           Etamax Login Details
 
@@ -115,14 +120,14 @@ def make_user_when_approved(sender, instance, created, **kwargs):
 
           Login here: https://etamax.fcrit.ac.in/login
         """,
-        'vinayak4267@outlook.com',
+        'etamax2023@outlook.com',
         [instance.email],
         fail_silently=False,
       )
       import csv 
      
       rows = [ user.name, user.roll_no,user.email,pwd,user.phone_no,user.department,user.semester,user.college] 
-      f = open('/home/karishma/Documents/etamax2023/backend/users/reg_records.csv', 'a')
+      f = open('/home/karishma/Documents/projects/etamax2023/backend/users/reg_records.csv', 'a')
       writer = csv.writer(f)
       writer.writerow(rows)
       f.close()
