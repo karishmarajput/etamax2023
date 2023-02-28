@@ -1,2 +1,3 @@
 staticfiles/
 tmp/
+db.sqlite3
