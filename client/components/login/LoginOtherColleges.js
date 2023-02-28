@@ -270,7 +270,7 @@ const LoginOtherColleges = () => {
       minH={"90vh"}
       align={"center"}
       justify={"center"}
-      bg={useColorModeValue("purple.100", "purple.800")}
+      // bg={useColorModeValue("purple.100", "purple.800")}
       borderRadius={"10px"}
       flexDir={"column"}
     >
@@ -477,6 +477,12 @@ const LoginOtherColleges = () => {
         Need help with registration ?{" "}
         <b>
           <NextLink href="/contact-council">Click here</NextLink>
+        </b>
+      </Text>
+      <Text pb="30px" color="purple.500">
+        Already Registered?{" "}
+        <b>
+          <NextLink href="/login">Click here</NextLink>
         </b>
       </Text>
     </Flex>

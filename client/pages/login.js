@@ -8,6 +8,7 @@ import {
   Center,
 } from "@chakra-ui/react";
 import LoginForm from "../components/login/LoginForm";
+import LoginFormNew from "../components/login/LoginFormNew";
 import LoginOtherColleges from "../components/login/LoginOtherColleges";
 //import Background from "../components/misc/Background";
 import Head from "next/head";
@@ -23,7 +24,7 @@ export default function Login(props) {
   return (
     <>
       <Head>
-        <title>FACES-22 | Login</title>
+        <title>ETAMAX-23 | Login</title>
         <link rel="shortcut icon" href="/images/favicon.ico" />
       </Head>
       <Marquee/>
@@ -42,7 +43,7 @@ export default function Login(props) {
             variant="solid-rounded"
           >
             <TabList>
-              <Tab
+              {/* <Tab
                 _selected={{ color: "white", bg: "purple.800" }}
                 fontSize={"xl"}
                 color="purple.800"
@@ -50,22 +51,11 @@ export default function Login(props) {
                 
               >
                 Login
-              </Tab>
-              <Tab
-                _selected={{ color: "white", bg: "purple.800" }}
-                fontSize={"xl"}
-                color="purple.800"
-                _focus={{ outline: "none!important" }}
-              >
-                Register
-              </Tab>
+              </Tab> */}
             </TabList>
             <TabPanels>
               <TabPanel>
-                <LoginForm />
-              </TabPanel>
-              <TabPanel>
-                <LoginOtherColleges />
+                <LoginFormNew />
               </TabPanel>
             </TabPanels>
           </Tabs>
