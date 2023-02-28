@@ -99,7 +99,7 @@ export default function Home(props) {
           
         </Flex>
         <div className="pageDivisionDiv">
-        
+      
         </div>
         
         <FeaturedEvents events={props.events} />
