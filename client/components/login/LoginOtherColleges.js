@@ -150,10 +150,10 @@ const LoginOtherColleges = () => {
       college,
       department,
       semester: s,
-      phone_no: p,
     } = values;
     let semester = Number.parseInt(s);
 
+    const p = phoneVerification.number
     // check if email is already registered
     if (await isRegistered(email, null)) {
       errorToast({title: "Email is already registered!"});
@@ -223,29 +223,39 @@ const LoginOtherColleges = () => {
     firebase.app();
   }
 
+  useEffect(() => {
+    window.recaptchaVerifier = new firebase.auth.RecaptchaVerifier(
+      "recaptcha-container",
+      {
+        size: "normal",
+        callback: () => {},
+      }
+    );
+  }, [])
+
+
   function login() {
-    if (!otpSent) {
-      var recaptchaVerifier = new firebase.auth.RecaptchaVerifier(
-        "recaptcha-container",
-        {
-          size: "normal",
-          callback: () => setPhoneVerification((prev) => ({
-            ...prev,
-            status: PHONE_VERIFICATION_STATUS.SENT_UNVERIFIED
-          })),
-        }
-      );
+    console.log()
+    const appVerifier = window.recaptchaVerifier;
+    if (phoneVerification.status === PHONE_VERIFICATION_STATUS.NOT_SENT) {
       firebase
         .auth()
-        .signInWithPhoneNumber("+91" + phoneVerification.number, recaptchaVerifier)
-        .then((_verify) => (window.verify = _verify))
+        .signInWithPhoneNumber("+91" + phoneVerification.number, appVerifier)
+        .then((_verify) => {
+          setPhoneVerification((prev) => ({
+            ...prev,
+            status: PHONE_VERIFICATION_STATUS.SENT_UNVERIFIED
+          }))
+          window.verify = _verify;
+        })
         .catch(console.log);
       return;
     }
-    console.log("Hello")
+    console.log("Here")
     window.verify
       .confirm(phoneVerification.otp)
       .then((stuff) => {
+        console.log("In callback")
         setPhoneVerification((prev) => ({
           ...prev,
           status: PHONE_VERIFICATION_STATUS.SENT_VERIFIED
@@ -449,16 +459,18 @@ const LoginOtherColleges = () => {
                 />
               </InputGroup>
             </FormControl>
+            <div
+              id="recaptcha-container"
+              style={{
+                display: phoneVerification.status === PHONE_VERIFICATION_STATUS.NOT_SENT ? "block" : "none"
+              }}
+            />
             <FormControl isRequired display={phoneVerification.status === PHONE_VERIFICATION_STATUS.SENT_VERIFIED ? "none" : "block"}>
               <Button bg="purple.400" onClick={login}
                       disabled={!(phoneVerification.number.length === 10)}
                       m={2} color="white">
                 {phoneVerification.status === PHONE_VERIFICATION_STATUS.SENT_UNVERIFIED ? "Verify OTP" : "Verify Phone"}
               </Button>
-              <Flex
-                id="recaptcha-container"
-                display={phoneVerification.status === PHONE_VERIFICATION_STATUS.NOT_SENT || phoneVerification.status === PHONE_VERIFICATION_STATUS.SENT_UNVERIFIED ? "block" : "none"}
-              />
             </FormControl>
             <Stack spacing={10} pt={2}>
               <Button
