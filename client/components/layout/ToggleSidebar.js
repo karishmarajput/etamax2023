@@ -113,7 +113,7 @@ export default function ToggleSidebar(){
                                    <HamburgerIcon boxSize={6}/>
                                 </div>
                             </div>
-                            <a className="navbar-brand textNav ">Etamax 2023</a>
+                            <a className="navbar-brand textNav EtamaxNavbar">ETAMAX 2023</a>
                             <a className="navbar-brand textNav "  href="/events"><img src="/event-ticket.png" className="navbarImg" /></a>
                         </div>
                     </nav>

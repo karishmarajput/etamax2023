@@ -175,7 +175,7 @@ export default function EventCard({
                 fontSize={"10pt"}
                 borderRadius="5px"
               >
-                Sports
+                E-Sports
               </Badge>
             ) : null}
             {participation.event.team_size > 1 ? (

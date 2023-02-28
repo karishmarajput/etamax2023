@@ -11,12 +11,13 @@
 .activeSlideBar{
   background-image: url('/menu-bg.png');
 }
+
 .pageDivisionDiv{
   width: 100%;
   height: 50vh;
-  background-image: url('/Montage.png');
+  /* background-image: url('/Montage.png');
   background-repeat: no-repeat;
-  background-size: 100% 100%;
+  background-size: 100% 100%; */
 
 }
 .pageDivision{

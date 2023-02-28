@@ -99,7 +99,7 @@ export default function Home(props) {
           
         </Flex>
         <div className="pageDivisionDiv">
-      
+          <image src='/Montage.png'></image>
         </div>
         
         <FeaturedEvents events={props.events} />

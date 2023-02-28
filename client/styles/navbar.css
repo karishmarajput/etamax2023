@@ -99,6 +99,10 @@
     cursor: pointer;
     text-decoration: none;
 }
-.textNav:hover{
+.EtamaxNavbar{
     color: white !important;
+    font-weight: 600;
+  }
+.EtamaxNavbar:hover{
+  color: #193050 !important;
 }

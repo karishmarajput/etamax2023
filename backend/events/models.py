@@ -13,7 +13,7 @@ class Event(models.Model):
   )
   CATEGORIES = (
     ("C","Cultural"),
-    # ("T", "Technical"),
+    ("T", "Technical"),
     ("S", "Sports"),
   )
 

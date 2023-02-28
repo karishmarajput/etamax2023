@@ -89,8 +89,8 @@ class EventRegiterView(APIView):
     except Event.DoesNotExist:
       return JsonResponse({"detail": "Event Doesn't Exists", "success": False}, status=400)
 
-    if not user.is_from_fcrit and event.category == 'S':
-      return JsonResponse({"detail": "Non Fcrit cant register for sports events", "success": False}, status=400)
+    # if not user.is_from_fcrit and event.category == 'S':
+    #   return JsonResponse({"detail": "Non Fcrit cant register for sports events", "success": False}, status=400)
 
     if event.seats == event.max_seats:
       return JsonResponse({"detail": "Event Doesn't have Seats Left!", "success": False}, status=400)
