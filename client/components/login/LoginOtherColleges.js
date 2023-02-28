@@ -469,7 +469,10 @@ const LoginOtherColleges = () => {
             <FormControl isRequired display={phoneVerification.status === PHONE_VERIFICATION_STATUS.SENT_VERIFIED ? "none" : "block"}>
               <Button bg="red.400" onClick={login}
                       disabled={!(phoneVerification.number.length === 10)}
-                      m={2} color="white">
+                      m={2} color="white"
+                      _hover={{
+                        bg: "red.900",
+                        }}>
                 {phoneVerification.status === PHONE_VERIFICATION_STATUS.SENT_UNVERIFIED ? "Verify OTP" : "Verify Phone"}
               </Button>
             </FormControl>
@@ -478,6 +481,9 @@ const LoginOtherColleges = () => {
                 size="lg"
                 bg={"red.500"}
                 color={"white"}
+                _hover={{
+                  bg: "red.900",
+                  }}
                 onClick={handleSubmit}
               >
                 Register
