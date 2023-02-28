@@ -59,7 +59,7 @@ const LoginOtherColleges = () => {
   const successToast = useToast({
     position: "top-right",
     duration: 3000,
-    render: () => <Success message={"Successfully registered"}/>,
+    // render: () => <Success message={"Successfully registered"}/>,
     isClosable: true,
   });
 
