@@ -7,8 +7,7 @@ import {
     TabList,
     Center,
   } from "@chakra-ui/react";
-  import LoginForm from "../components/login/LoginForm";
-  import LoginFormNew from "../components/login/LoginFormNew";
+
   import LoginOtherColleges from "../components/login/LoginOtherColleges";
   //import Background from "../components/misc/Background";
   import Head from "next/head";
@@ -43,15 +42,6 @@ import {
               variant="solid-rounded"
             >
               <TabList>
-                <Tab
-                  _selected={{ color: "white", bg: "purple.800" }}
-                  fontSize={"xl"}
-                  color="purple.800"
-                  _focus={{ outline: "none!important" }}
-                  
-                >
-                  Register
-                </Tab>
               </TabList>
               <TabPanels>
                 <TabPanel>

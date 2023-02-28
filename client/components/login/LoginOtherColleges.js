@@ -280,22 +280,23 @@ const LoginOtherColleges = () => {
       minH={"90vh"}
       align={"center"}
       justify={"center"}
-      // bg={useColorModeValue("purple.100", "purple.800")}
+      bg={"transparent+"}
       borderRadius={"10px"}
       flexDir={"column"}
     >
       <Stack w="100%" spacing={6} mx={"auto"} maxW={"lg"} py={12} px={6}>
-        <Stack align={"center"}>
-          <Heading fontSize={"2xl"} color="purple.600" textAlign={"center"}>
+      <Stack align={"center"}>
+          <Heading fontSize={"2xl"} color="red.600" textAlign={"center"}>
             *Only for Non-FCRIT Students
           </Heading>
-        </Stack>
+          </Stack>
         <Box
           rounded={"lg"}
-          bg={useColorModeValue("purple.50", "gray.700")}
+          // bg={useColorModeValue("purple.50", "gray.700")}
           boxShadow={"lg"}
           p={8}
         >
+          
           <Stack spacing={4}>
             <Box>
               <FormControl isRequired>
@@ -308,11 +309,11 @@ const LoginOtherColleges = () => {
                   placeholder="Enter your full name here"
                   _focus={{
                     outline: "none",
-                    borderColor: "purple.400",
+                    borderColor: "black.400",
                     borderWidth: "2px",
                   }}
                   _hover={{
-                    borderColor: "purple.300",
+                    borderColor: "black.300",
                     borderWidth: "2px",
                   }}
                 />
@@ -329,11 +330,11 @@ const LoginOtherColleges = () => {
                 placeholder="Enter your email address"
                 _focus={{
                   outline: "none",
-                  borderColor: "purple.400",
+                  borderColor: "black.400",
                   borderWidth: "2px",
                 }}
                 _hover={{
-                  borderColor: "purple.300",
+                  borderColor: "black.300",
                   borderWidth: "2px",
                 }}
               />
@@ -351,11 +352,11 @@ const LoginOtherColleges = () => {
                 placeholder="5"
                 _focus={{
                   outline: "none",
-                  borderColor: "purple.400",
+                  borderColor: "black.400",
                   borderWidth: "2px",
                 }}
                 _hover={{
-                  borderColor: "purple.300",
+                  borderColor: "black.300",
                   borderWidth: "2px",
                 }}
               />
@@ -369,11 +370,11 @@ const LoginOtherColleges = () => {
                 onChange={handleChange}
                 _focus={{
                   outline: "none",
-                  borderColor: "purple.400",
+                  borderColor: "black.400",
                   borderWidth: "2px",
                 }}
                 _hover={{
-                  borderColor: "purple.300",
+                  borderColor: "black.300",
                   borderWidth: "2px",
                 }}
               >
@@ -395,11 +396,11 @@ const LoginOtherColleges = () => {
                 placeholder="Enter your college name and location"
                 _focus={{
                   outline: "none",
-                  borderColor: "purple.400",
+                  borderColor: "black.400",
                   borderWidth: "2px",
                 }}
                 _hover={{
-                  borderColor: "purple.300",
+                  borderColor: "black.300",
                   borderWidth: "2px",
                 }}
               />
@@ -423,11 +424,11 @@ const LoginOtherColleges = () => {
                   placeholder="Your phone no."
                   _focus={{
                     outline: "none",
-                    borderColor: "purple.400",
+                    borderColor: "black.400",
                     borderWidth: "2px",
                   }}
                   _hover={{
-                    borderColor: "purple.300",
+                    borderColor: "black.300",
                     borderWidth: "2px",
                   }}
                 />
@@ -449,11 +450,11 @@ const LoginOtherColleges = () => {
                   placeholder="Verification Code"
                   _focus={{
                     outline: "none",
-                    borderColor: "purple.400",
+                    borderColor: "black.400",
                     borderWidth: "2px",
                   }}
                   _hover={{
-                    borderColor: "purple.300",
+                    borderColor: "black.300",
                     borderWidth: "2px",
                   }}
                 />
@@ -466,7 +467,7 @@ const LoginOtherColleges = () => {
               }}
             />
             <FormControl isRequired display={phoneVerification.status === PHONE_VERIFICATION_STATUS.SENT_VERIFIED ? "none" : "block"}>
-              <Button bg="purple.400" onClick={login}
+              <Button bg="red.400" onClick={login}
                       disabled={!(phoneVerification.number.length === 10)}
                       m={2} color="white">
                 {phoneVerification.status === PHONE_VERIFICATION_STATUS.SENT_UNVERIFIED ? "Verify OTP" : "Verify Phone"}
@@ -475,7 +476,7 @@ const LoginOtherColleges = () => {
             <Stack spacing={10} pt={2}>
               <Button
                 size="lg"
-                bg={"purple.400"}
+                bg={"red.500"}
                 color={"white"}
                 onClick={handleSubmit}
               >
@@ -491,7 +492,7 @@ const LoginOtherColleges = () => {
           <NextLink href="/contact-council">Click here</NextLink>
         </b>
       </Text>
-      <Text pb="30px" color="purple.500">
+      <Text pb="30px" color="red.500">
         Already Registered?{" "}
         <b>
           <NextLink href="/login">Click here</NextLink>

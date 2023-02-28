@@ -7,9 +7,7 @@ import {
   TabList,
   Center,
 } from "@chakra-ui/react";
-import LoginForm from "../components/login/LoginForm";
 import LoginFormNew from "../components/login/LoginFormNew";
-import LoginOtherColleges from "../components/login/LoginOtherColleges";
 //import Background from "../components/misc/Background";
 import Head from "next/head";
 import * as cookie from "cookie";
