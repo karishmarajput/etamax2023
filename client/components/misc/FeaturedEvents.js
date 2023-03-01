@@ -39,10 +39,11 @@ export default function FeaturedEvents({ events }) {
       pt="5"
       pb="10"
       flexDir={"column"}
+      className="eventBackground"
     >
       <Flex w="90%" flexDir={"column"}>
         <Box my={5}>
-          <Heading color="purple.700" fontSize={["3xl", "4xl", "5xl", "5xl"]}>
+          <Heading color="#843d15" fontSize={["3xl", "4xl", "5xl", "5xl"]}>
             Featured Events
           </Heading>
         </Box>

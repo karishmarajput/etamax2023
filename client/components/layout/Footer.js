@@ -4,7 +4,7 @@ export default function Footer() {
   return (
     <Flex
       as="footer"
-      bg="purple"
+      bg="#2e1503"
       w="100%"
       h={{ md: "8vh" }}
       py="20px"
@@ -21,7 +21,7 @@ export default function Footer() {
           textAlign={["center", "unset", "unset", "unset"]}
           noOfLines={2}
           flex={2}
-          color="purple.900"
+          color="white"
           
         >
           Developed by{" "}
@@ -64,7 +64,7 @@ export default function Footer() {
           flex={1}
           as="a"
           href={"https://fcrit.ac.in"}
-          color="purple.500"
+          color="white"
           textAlign={["center", "end", "end", "end"]}
         >
           F.C.R.I.T

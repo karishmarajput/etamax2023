@@ -39,13 +39,13 @@ class User(AbstractBaseUser, PermissionsMixin):
   semester = models.SmallIntegerField(_("Semester"),blank=True, null=True)
   college = models.CharField(_("College"), max_length=256, default="FCRIT, Vashi.")
   phone_no = models.CharField(_("Phone Number"),blank=True,  max_length=32)
-  is_phone_no_verified = models.BooleanField(_("Is Phone Number Verified"), default=False)
+  is_phone_no_verified = models.BooleanField(_("Is Phone Number Verified"), default=True)
   cart = models.TextField(_("Cart JSON (DONT FILL THIS)"), default="[]")
   is_from_fcrit = models.BooleanField(_("Is From FCRIT"), default=True)
 
   money_owed = models.DecimalField(_("Money Owed"),decimal_places=2,max_digits=10, default=0.00)
-  has_filled_profile = models.BooleanField(_("Has Filled Profile"), default=False)
-  criteria = models.TextField(_("Criteria JSON (DONT FILL THIS)"), default='{"C": 0, "T": 0, "S": 0}')
+  has_filled_profile = models.BooleanField(_("Has Filled Profile"), default=True)
+  criteria = models.TextField(_("Criteria JSON (DONT FILL THIS)"), default='{"C": 1, "T": 2, "S": 0}')
 
   is_staff = models.BooleanField(default=False)
   is_superuser = models.BooleanField(default=False)

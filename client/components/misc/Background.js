@@ -11,7 +11,7 @@ export default function Background({ pageName }) {
       {pageName == "Home" && (
         <Box
           as="img"
-          src={"https://raw.githubusercontent.com/dark-shad/etamax_imagaes/3b3f990ef802863785afe155daf84ab24333594e/Untitled%20design%20(2).svg"}
+          src={"client/public/background-etamax.png"}
           alt={"Background test"}
           position="fixed"
           zIndex="-2"

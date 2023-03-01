@@ -4,7 +4,9 @@
   /* width: calc(100% - 40px);
   height: calc(100% - 40px); */
 }
-
+body{
+  background-color: #EAA16C !important;
+}
 .buttonClose{
   background-color: transparent;
 }
@@ -12,24 +14,65 @@
   background-image: url('/menu-bg.png');
 }
 
-.pageDivisionDiv{
-  width: 100%;
-  height: 50vh;
-  /* background-image: url('/Montage.png');
-  background-repeat: no-repeat;
-  background-size: 100% 100%; */
+.homeBackground{
+  background-image: url("/background-etamax.png") !important;
+  background-size: 100% 100%;
+  background-position: center;
+  object-fit: contain;
+  position:relative;
+  top: -55px;
+  z-index: -2;
+}
+
+.eventBackground{
+  background-image: url("/featured-etamax.png") !important;
+  background-size: 100% 100%;
+  background-position: center;
+  object-fit: contain;
+  position:relative;
+  top: -55px;
+}
+
+.sponsorBG{
+  background-image: url("/sponsors-etamax.png") !important;
+  background-size: 100% 100%;
+  background-position: center;
+  object-fit: contain;
+  position:relative;
+  top: -55px;
+}
+
+@media screen and (max-width: 768px) {
+  .homeBackground{
+    background-image: url("/home-mobile.png") !important;
+    background-size: 100% 100%;
+    background-position: center;
+    object-fit: contain;
+    position:relative;
+    top: -10px;
+    z-index: -2;
+  }
+  
+  .eventBackground{
+    background-image: url("/featured-mobile.png") !important;
+    background-size: 100% 100%;
+    background-position: center;
+    object-fit: contain;
+    position:relative;
+    top: -10px;
+  }
+
+  .sponsorBG{
+    background-image: url("/sponsors-etamax.png") !important;
+    background-size: 100% 100%;
+    background-position: center;
+    object-fit: contain;
+    position:relative;
+    top: -10px;
+  }
 
 }
-.pageDivision{
-  /* width: 100%;
-  height: auto;
-  background-size: contain;
-  background-repeat: no-repeat;
-position: relative;
-bottom: 0px; */
 
-/* object-fit: cover; */
-}
 .eventImgIcon{
   background-image: url('/event-ticket.png') !important;
   width: 5rem;
@@ -40,6 +83,13 @@ bottom: 0px; */
   font-weight: bolder;
   font-size: larger;
 }
+
+
+.mapPreFooter{
+  border: 1px solid black;
+  
+}
+
 .petal {
   display: none;
   /* background: url(https://github.com/dark-shad/etamax_imagaes/blob/main/hoja-removebg-preview1.png?raw=true) no-repeat; */
@@ -306,6 +356,9 @@ marquee div{
   
 
 @media screen and (max-width: 768px){
+  .mapFcrit{
+    min-width: 300px !important;
+  }
   .item{
     width: 100%;
   }

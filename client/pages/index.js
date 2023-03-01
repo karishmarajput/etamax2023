@@ -1,7 +1,5 @@
 import { Box, Center, Heading, Flex, Text } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
-// import Flower from "../components/misc/Flower";
-import { randNum } from "../components/utils/utils";
 import Layout from "../components/layout";
 import Head from "next/head";
 import Background from "../components/misc/Background";
@@ -9,13 +7,6 @@ import "@fontsource/birthstone-bounce";
 import Sponsors from "../components/misc/Sponsors";
 import FeaturedEvents from "../components/misc/FeaturedEvents";
 import { API_BASE_URL } from "../config";
-import PageDivision from "../components/layout/PageDivision";
-//import DroneEvent from "../components/misc/DroneEvent";
-//import FooterOnTopOfFooter from "../components/misc/FooterOnTopOfFooter";
-
-//if (typeof window !== "undefined") {
-//  import("../components/utils/blossom");
-//}
 
 export default function Home(props) {
   const [over, setOver] = useState(false);
@@ -83,26 +74,10 @@ export default function Home(props) {
       </Head>
       
       <Layout scrollYVar={450}>
-        <Flex bg="transparent" h="50vh" maxW="100vw" flexDirection="column">
-          <Center h="50vh" w="100%" flexDir={"column"}>
-            <Box w="80%">
-              <Heading color="pink.300" fontSize="4xl">
-                ETAMAX-23{" "}
-                <Text fontSize="5xl" fontFamily="Birthstone Bounce">
-                  MONTAGE
-                </Text>
-              </Heading> 
-            </Box>
-        
-          
-          </Center>
-          
+        <Flex h="120vh" maxW="100vw" flexDirection="column" className="homeBackground"> 
         </Flex>
-        <div className="pageDivisionDiv">
-          <image src='/Montage.png'></image>
-        </div>
         
-        <FeaturedEvents events={props.events} />
+        <FeaturedEvents events={props.events}  />
         <Sponsors />
       </Layout>
     </>

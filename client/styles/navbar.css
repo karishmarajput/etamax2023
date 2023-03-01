@@ -3,7 +3,9 @@
 
 /* ---Sidebar css */
 .textNav{
-  color: purple!important;
+  color: white!important;
+  font-weight: bold;
+  font-size: 1.2rem;
 }
 .navbarPadding{
     padding-left: 0.5rem !important;
@@ -17,7 +19,7 @@
     transform: rotate(3deg);
 }
 .btnNav {
-    color: purple;
+    color: white;
     background-color: transparent;
     border: 0px;
 }
