@@ -33,7 +33,7 @@ export default function Footer() {
             Agrima
           </Link>
           ,{" "}
-          <Link target="_blank" href="https://github.com/karishmarajput">
+          <Link target="_blank" href="https://github.com/blanklavender">
             Mahima
           </Link>
           ,{" "}

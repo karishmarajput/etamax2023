@@ -48,7 +48,7 @@ export default function Footer() {
             <Flex 
             cursor="pointer"
             >
-            <a href="https://www.instagram.com/" target="_blank">
+            <a href="https://www.instagram.com/council.fcrit2022/" target="_blank">
               <FaInstagram 
               fontSize="27px" 
               color="white"
