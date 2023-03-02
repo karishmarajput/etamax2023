@@ -14,6 +14,7 @@ import EventCard from "../components/cards/EventCards";
 import Layout from "../components/layout";
 import { API_BASE_URL } from "../config";
 import { useRouter } from "next/router";
+import Disclaimer from "../components/layout/Disclaimer";
 
 //if (typeof window !== "undefined") {
 //  import("../components/utils/blossom");
@@ -229,6 +230,10 @@ export default function Events(props) {
               </Box>
             </Center>
           </Flex>
+
+          <Disclaimer />
+
+
           <Center w="100%" gridGap={"3"}>
             
             <Center w={{ base: "95%", lg: "50%" }} gridGap={3}>

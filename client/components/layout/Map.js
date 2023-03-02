@@ -1,4 +1,4 @@
-import { Flex, Text, Box, Wrap, AspectRatio, Container, WrapItem, Center, Spacer, HStack} from "@chakra-ui/react";
+import { Flex, Text, AspectRatio, Center } from "@chakra-ui/react";
 import { FaInstagram } from "react-icons/fa";
 
 export default function Footer() {
@@ -48,7 +48,7 @@ export default function Footer() {
             <Flex 
             cursor="pointer"
             >
-            <a href="https://www.instagram.com/" target="_blank">
+            <a href="https://www.instagram.com/council.fcrit2022/" target="_blank">
               <FaInstagram 
               fontSize="27px" 
               color="white"
