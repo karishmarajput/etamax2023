@@ -1,4 +1,4 @@
-import { Flex, Text, Box, Wrap, AspectRatio, Container, WrapItem, Center, Spacer, HStack} from "@chakra-ui/react";
+import { Flex, Text, AspectRatio, Center } from "@chakra-ui/react";
 import { FaInstagram } from "react-icons/fa";
 
 export default function Footer() {
