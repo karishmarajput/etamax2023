@@ -32,7 +32,7 @@ const LoginOtherColleges = () => {
     NOT_SENT: 0,
     SENT_UNVERIFIED: 1,
     SENT_VERIFIED: 2
-  }
+  };
 
   const [otpSent, setOtpSent] = useState(false);
   const [otp, setOtp] = useState("");
@@ -40,7 +40,7 @@ const LoginOtherColleges = () => {
     status: PHONE_VERIFICATION_STATUS.NOT_SENT,
     number: "",
     otp: ""
-  })
+  });
   const [unconfirmedPhone, setUnconfirmedPhone] = useState("");
   const [values, setValues] = useState({
     email: "",
@@ -153,7 +153,7 @@ const LoginOtherColleges = () => {
     } = values;
     let semester = Number.parseInt(s);
 
-    const p = phoneVerification.number
+    const p = phoneVerification.number;
     // check if email is already registered
     if (await isRegistered(email, null)) {
       errorToast({title: "Email is already registered!"});
@@ -228,14 +228,21 @@ const LoginOtherColleges = () => {
       "recaptcha-container",
       {
         size: "normal",
-        callback: () => {},
+        callback: () => {
+          setPhoneVerification((prevState => {
+            return {
+              ...prevState,
+              status: PHONE_VERIFICATION_STATUS.SENT_UNVERIFIED
+            };
+          }));
+        },
       }
     );
-  }, [])
+  }, []);
 
 
   function login() {
-    console.log()
+    console.log();
     const appVerifier = window.recaptchaVerifier;
     if (phoneVerification.status === PHONE_VERIFICATION_STATUS.NOT_SENT) {
       firebase
@@ -245,21 +252,21 @@ const LoginOtherColleges = () => {
           setPhoneVerification((prev) => ({
             ...prev,
             status: PHONE_VERIFICATION_STATUS.SENT_UNVERIFIED
-          }))
+          }));
           window.verify = _verify;
         })
         .catch(console.log);
       return;
     }
-    console.log("Here")
+    console.log("Here");
     window.verify
       .confirm(phoneVerification.otp)
       .then((stuff) => {
-        console.log("In callback")
+        console.log("In callback");
         setPhoneVerification((prev) => ({
           ...prev,
           status: PHONE_VERIFICATION_STATUS.SENT_VERIFIED
-        }))
+        }));
         successToast({
           title: "Phone Verified!",
           description: "Your phone number has been verified",
@@ -271,8 +278,20 @@ const LoginOtherColleges = () => {
           }).catch(() => errorToast({title: "An error occured"}));
       })
       .catch((stuff) => {
-        errorToast({title: "An error occured"})
+        errorToast({title: "An error occured"});
       });
+  }
+
+  function resendOTP() {
+    window.recaptchaVerifier.render().then(function (widgetId) {
+      grecaptcha.reset(widgetId);
+      setPhoneVerification((prevState => {
+        return {
+          ...prevState,
+          status: PHONE_VERIFICATION_STATUS.NOT_SENT
+        };
+      }));
+    });
   }
 
   return (
@@ -285,18 +304,18 @@ const LoginOtherColleges = () => {
       flexDir={"column"}
     >
       <Stack w="100%" spacing={6} mx={"auto"} maxW={"lg"} py={12} px={6}>
-      <Stack align={"center"}>
+        <Stack align={"center"}>
           <Heading fontSize={"2xl"} color="red.600" textAlign={"center"}>
             *Only for Non-FCRIT Students
           </Heading>
-          </Stack>
+        </Stack>
         <Box
           rounded={"lg"}
           // bg={useColorModeValue("purple.50", "gray.700")}
           boxShadow={"lg"}
           p={8}
         >
-          
+
           <Stack spacing={4}>
             <Box>
               <FormControl isRequired>
@@ -434,7 +453,8 @@ const LoginOtherColleges = () => {
                 />
               </InputGroup>
             </FormControl>
-            <FormControl isRequired display={phoneVerification.status === PHONE_VERIFICATION_STATUS.SENT_VERIFIED || phoneVerification.status === PHONE_VERIFICATION_STATUS.NOT_SENT ? "none" : "block"}>
+            <FormControl isRequired
+                         display={phoneVerification.status === PHONE_VERIFICATION_STATUS.SENT_VERIFIED || phoneVerification.status === PHONE_VERIFICATION_STATUS.NOT_SENT ? "none" : "block"}>
               <FormLabel>Verification Code</FormLabel>
               <InputGroup>
                 <Input
@@ -466,14 +486,26 @@ const LoginOtherColleges = () => {
                 display: phoneVerification.status === PHONE_VERIFICATION_STATUS.NOT_SENT ? "block" : "none"
               }}
             />
-            <FormControl isRequired display={phoneVerification.status === PHONE_VERIFICATION_STATUS.SENT_VERIFIED ? "none" : "block"}>
+            <FormControl isRequired
+                         display={phoneVerification.status === PHONE_VERIFICATION_STATUS.SENT_VERIFIED ? "none" : "block"}>
               <Button bg="red.400" onClick={login}
                       disabled={!(phoneVerification.number.length === 10)}
                       m={2} color="white"
                       _hover={{
                         bg: "red.900",
-                        }}>
+                      }}>
                 {phoneVerification.status === PHONE_VERIFICATION_STATUS.SENT_UNVERIFIED ? "Verify OTP" : "Verify Phone"}
+              </Button>
+            </FormControl>
+            <FormControl isRequired
+                         display={phoneVerification.status === PHONE_VERIFICATION_STATUS.SENT_UNVERIFIED ? "block" : "none"}>
+              <Button bg="red.400" onClick={resendOTP}
+                      disabled={!(phoneVerification.number.length === 10)}
+                      m={2} color="white"
+                      _hover={{
+                        bg: "red.900",
+                      }}>
+                {"Resend OTP"}
               </Button>
             </FormControl>
             <Stack spacing={10} pt={2}>
@@ -483,7 +515,7 @@ const LoginOtherColleges = () => {
                 color={"white"}
                 _hover={{
                   bg: "red.900",
-                  }}
+                }}
                 onClick={handleSubmit}
               >
                 Register
