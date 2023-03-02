@@ -25,7 +25,6 @@ import {
 import { EditIcon } from "@chakra-ui/icons";
 import Layout from "../components/layout";
 import Head from "next/head";
-//import Background from "../components/misc/Background";
 import { useState, useEffect } from "react";
 import { API_BASE_URL } from "../config";
 import * as cookie from "cookie";
@@ -232,14 +231,8 @@ export default function Profile(props) {
       `}</style>
       <Layout scrollYVar={80}>
         <Center
-          //backgroundImage={"assets/checkout.svg"}
-          backgroundSize={"cover"}
-          backgroundPosition={"center"}
-          backgroundRepeat={"no-repeat"}
-          h={{ base: "auto", lg: "130vh" }}
-          w={"100vw"}
           flexDir={"column"}
-          // className="mobileBg"
+          className="bgProfile"
         >
           <div className="profileEditDiv" >
           <Center bg="transparent" h={{ base: "13vh", md: "15vh" }}/>

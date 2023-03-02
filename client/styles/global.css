@@ -25,6 +25,17 @@ body{
   z-index: -2;
 }
 
+.bgProfile{
+  background-image: url("/featured-etamax.png") !important;
+  background-size: 100% 100%;
+  background-position: center;
+  object-fit: contain;
+  position:relative;
+  top: -55px;
+  z-index: -2;
+
+}
+
 .eventBackground{
   background-image: url("/featured-etamax.png") !important;
   background-size: 100% 100%;
@@ -32,6 +43,15 @@ body{
   object-fit: contain;
   position:relative;
   top: -55px;
+}
+
+.bgCheckout{
+  background-image: url("/featured-etamax.png") !important;
+  background-size: 100% 100%;
+  background-position: center;
+  object-fit: contain;
+  position:relative;
+  top: -10px;
 }
 
 .sponsorBG{
@@ -55,6 +75,24 @@ body{
   }
   
   .eventBackground{
+    background-image: url("/featured-mobile.png") !important;
+    background-size: 100% 100%;
+    background-position: center;
+    object-fit: contain;
+    position:relative;
+    top: -10px;
+  }
+
+  .bgProfile{
+    background-image: url("/featured-mobile.png") !important;
+    background-size: 100% 100%;
+    background-position: center;
+    object-fit: contain;
+    position:relative;
+    top: -10px;
+  }
+
+  .bgCheckout{
     background-image: url("/featured-mobile.png") !important;
     background-size: 100% 100%;
     background-position: center;
@@ -205,10 +243,7 @@ body::-webkit-scrollbar-track {
     -ms-overflow-style: none;
     scrollbar-width: none;
   }
-  .mobileBg{
-    content:url("https://github.com/dark-shad/etamax_imagaes/blob/main/udaan%20fone.png?raw=true") !important;
-    z-index: -2;
-  }
+
   .css-1xl3hdo{
     background-image: url("https://github.com/dark-shad/etamax_imagaes/blob/main/udaan%20fone.png?raw=true") !important;
   }

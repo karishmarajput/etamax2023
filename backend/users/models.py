@@ -127,7 +127,8 @@ def make_user_when_approved(sender, instance, created, **kwargs):
       import csv 
      
       rows = [ user.name, user.roll_no,user.email,pwd,user.phone_no,user.department,user.semester,user.college] 
-      f = open('/home/karishma/Documents/projects/etamax2023/backend/users/reg_records.csv', 'a')
+      f = open('/Users/prati/OneDrive/Desktop/etamax2023/backend/users/reg_records.csv', 'a')
+      
       writer = csv.writer(f)
       writer.writerow(rows)
       f.close()
