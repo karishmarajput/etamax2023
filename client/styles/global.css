@@ -36,6 +36,17 @@ body{
 
 }
 
+.bgEvent{
+  background-image: url("/featured-etamax.png") !important;
+  background-size: 100% 100%;
+  background-position: center;
+  object-fit: contain;
+  position:relative;
+  top: -55px;
+  z-index: -2;
+
+}
+
 .eventBackground{
   background-image: url("/featured-etamax.png") !important;
   background-size: 100% 100%;
@@ -83,6 +94,16 @@ body{
     top: -10px;
   }
 
+  .bgEvent{
+    background-image: url("/featured-mobile.png") !important;
+    background-size: 100% 100%;
+    background-position: center;
+    object-fit: contain;
+    position:relative;
+    top: -55px;
+    z-index: -2;
+  }  
+  
   .bgProfile{
     background-image: url("/featured-mobile.png") !important;
     background-size: 100% 100%;

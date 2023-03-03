@@ -283,6 +283,7 @@ const LoginOtherColleges = () => {
       bg={"transparent+"}
       borderRadius={"10px"}
       flexDir={"column"}
+      
     >
       <Stack w="100%" spacing={6} mx={"auto"} maxW={"lg"} py={12} px={6}>
       <Stack align={"center"}>
@@ -295,6 +296,7 @@ const LoginOtherColleges = () => {
           // bg={useColorModeValue("purple.50", "gray.700")}
           boxShadow={"lg"}
           p={8}
+          className="box1Checkout"
         >
           
           <Stack spacing={4}>
@@ -313,7 +315,7 @@ const LoginOtherColleges = () => {
                     borderWidth: "2px",
                   }}
                   _hover={{
-                    borderColor: "black.300",
+                    borderColor: "black.600",
                     borderWidth: "2px",
                   }}
                 />

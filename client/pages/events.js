@@ -180,8 +180,8 @@ export default function Events(props) {
   return (
     <>
       <Head>
-        <title>FACES-22 | Events</title>
-        <meta name="FACES-22" content="Events" />
+        <title>Etamax-23 | Events</title>
+        <meta name="Etamax-23" content="Events" />
         <meta
           name="description"
           content="Here is the list of events for this year"
@@ -190,47 +190,35 @@ export default function Events(props) {
         <link rel="shortcut icon" href="/images/favicon.ico" />
       </Head>
       
-      <Layout scrollYVar={450}>
+      <Layout scrollYVar={450}
+      >
         <Flex
           id="blossom-container"
           flexDir="column"
           h="auto"
           w="100vw"
           maxW="100vw"
-          className="box1Checkout"
+          // className="box1Checkout bgEvent"
+          className="bgEvent"
         >
           <Flex
             maxW="100vw"
             flexDirection="column"
-            h={{ base: "110vh", md: "100vh" }}
+            h={{ base: "110vh", md: "80vh" }}
           >
             <Center
-              h={{ base: "110vh", md: "100vh" }}
+              h={{ base: "100vh", md: "80vh" }}
               w="100%"
               flexDir={"column"}
             
             >
               <Box w="80%">
-                <Heading color="pink.300" fontSize="6xl">
-                  FACES-22{" "}
-                  <Text fontSize="8xl" fontFamily="Birthstone Bounce">
-                    Udaan
-                  </Text>
+                <Heading color="red.800" fontSize="6xl">
+                  Our Exciting Events
                 </Heading>
-              </Box>
-              <Box mt={4} w="83%" p="20px">
-                <Text
-                  fontSize={{ base: "xl", md: "3xl" }}
-                  fontWeight={"normal"}
-                  color="black.800"
-                  
-                >
-
-                </Text>
               </Box>
             </Center>
           </Flex>
-
           <Disclaimer />
 
 

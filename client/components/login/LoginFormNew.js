@@ -139,30 +139,16 @@ const LoginFormNew = () => {
     justify={"center"}
     flexDir="column"
     >
-        
-       
-
         <Flex
-        className="internalboxcheckoutboth"
-        >
-                {/* <Flex
-                rounded={"lg"}
-                boxShadow={"lg"}
-                p={8}
-                minW="50%"
-                minH={"80vh"}
-                className="internalboxcheckout"
-                >
-                    <img src={"../assets/home.jpg"} />
-                </Flex> */}
-                
+        className="internalboxcheckoutboth "
+        >              
                 <Flex
                 rounded={"lg"}
                 bg={useColorModeValue("black.50", "black.700")}
                 boxShadow={"lg"}
                 p={8}
                 minW="100%"
-                className="internalboxcheckout"
+                className="internalboxcheckout box1Checkout"
                 minH={"60vh"}
                 >
                   

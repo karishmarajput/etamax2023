@@ -23,7 +23,7 @@ import {
     return (
       <>
         <Head>
-          <title>ETAMAX-23 | Login</title>
+          <title>ETAMAX-23 | Register </title>
           <link rel="shortcut icon" href="/images/favicon.ico" />
         </Head>
         <Marquee/>
@@ -33,6 +33,7 @@ import {
           w="100vw"
           alignItems="center"
           borderRadius="lg"
+          className="bgEvent"
         >
           <Center>
             <Tabs
