@@ -164,6 +164,20 @@ export default function ToggleSidebar(){
                   Login
                   </Flex>
                 </MenuItems>
+                )}
+                {!loggedIn && (
+                  <MenuItems
+                    isDisabled={false}
+                    color={color}
+                    to="/register"
+                    nextLink={false}
+                  > 
+                  <Flex gridGap={"4"}>
+                    <BiLogIn/>
+                    Register
+                    </Flex>
+                  </MenuItems> 
+                
                 
               )}
               {loggedIn && (
