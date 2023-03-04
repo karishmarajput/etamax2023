@@ -43,6 +43,56 @@ body{
   top: -55px;
 }
 
+.bgEvent{
+  background-image: url("/featured-etamax.png") !important;
+  background-size: 100% 100%;
+  background-position: center;
+  /* background-repeat: repeat; */
+  object-fit: contain;
+  position:relative;
+  top: -10px;
+}
+
+.bgLogin{
+  background-image: url("/featured-etamax.png") !important;
+  background-size: 100% 100%;
+  background-position: center;
+  /* background-repeat: repeat; */
+  object-fit: contain;
+  position:relative;
+  top: -10px;
+}
+
+.bgRegister{
+  background-image: url("/featured-etamax.png") !important;
+  background-size: 100% 100%;
+  background-position: center;
+  /* background-repeat: repeat; */
+  object-fit: contain;
+  position:relative;
+  top: -10px;
+}
+
+.bgProfile{
+  background-image: url("/featured-etamax.png") !important;
+  background-size: 100% 100%;
+  background-position: center;
+  /* background-repeat: repeat; */
+  object-fit: contain;
+  position:relative;
+  top: -10px;
+}
+
+.bgCheckout{
+  background-image: url("/featured-etamax.png") !important;
+  background-size: 100% 100%;
+  background-position: center;
+  /* background-repeat: repeat; */
+  object-fit: contain;
+  position:relative;
+  top: -10px;
+}
+
 @media screen and (max-width: 768px) {
   .homeBackground{
     background-image: url("/home-mobile.png") !important;
@@ -65,6 +115,51 @@ body{
 
   .sponsorBG{
     background-image: url("/sponsors-etamax.png") !important;
+    background-size: 100% 100%;
+    background-position: center;
+    object-fit: contain;
+    position:relative;
+    top: -10px;
+  }
+
+  .bgEvent{
+    background-image: url("/featured-mobile.png") !important;
+    background-size: 100% 100%;
+    background-position: center;
+    object-fit: contain;
+    position:relative;
+    top: -10px;
+  }
+
+  .bgLogin{
+    background-image: url("/featured-mobile.png") !important;
+    background-size: 100% 100%;
+    background-position: center;
+    object-fit: contain;
+    position:relative;
+    top: -10px;
+  }
+  
+  .bgRegister{
+    background-image: url("/featured-mobile.png") !important;
+    background-size: 100% 100%;
+    background-position: center;
+    object-fit: contain;
+    position:relative;
+    top: -10px;
+  }
+
+  .bgProfile{
+    background-image: url("/featured-mobile.png") !important;
+    background-size: 100% 100%;
+    background-position: center;
+    object-fit: contain;
+    position:relative;
+    top: -10px;
+  }
+
+  .bgCheckout{
+    background-image: url("/featured-mobile.png") !important;
     background-size: 100% 100%;
     background-position: center;
     object-fit: contain;

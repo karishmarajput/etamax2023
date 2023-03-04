@@ -33,6 +33,7 @@ import {
           w="100vw"
           alignItems="center"
           borderRadius="lg"
+          className="bgRegister"
         >
           <Center>
             <Tabs

@@ -292,9 +292,9 @@ const LoginOtherColleges = () => {
           </Stack>
         <Box
           rounded={"lg"}
-          // bg={useColorModeValue("purple.50", "gray.700")}
           boxShadow={"lg"}
           p={8}
+          className="box1Checkout"
         >
           
           <Stack spacing={4}>
@@ -307,6 +307,8 @@ const LoginOtherColleges = () => {
                   name="name"
                   onChange={handleChange}
                   placeholder="Enter your full name here"
+                  borderColor= "black.400"
+                  color={"black.800"}
                   _focus={{
                     outline: "none",
                     borderColor: "black.400",
@@ -328,6 +330,8 @@ const LoginOtherColleges = () => {
                 value={values.email}
                 onChange={handleChange}
                 placeholder="Enter your email address"
+                borderColor= "black.400"
+                color={"black.800"}
                 _focus={{
                   outline: "none",
                   borderColor: "black.400",
@@ -350,6 +354,8 @@ const LoginOtherColleges = () => {
                 name="semester"
                 onChange={handleChange}
                 placeholder="5"
+                borderColor= "black.400"
+                color={"black.800"}
                 _focus={{
                   outline: "none",
                   borderColor: "black.400",
@@ -368,6 +374,8 @@ const LoginOtherColleges = () => {
                 value={values.department}
                 name="department"
                 onChange={handleChange}
+                borderColor= "black.400"
+                  color={"black.800"}
                 _focus={{
                   outline: "none",
                   borderColor: "black.400",
@@ -394,6 +402,8 @@ const LoginOtherColleges = () => {
                 name="college"
                 onChange={handleChange}
                 placeholder="Enter your college name and location"
+                borderColor= "black.400"
+                color={"black.800"}
                 _focus={{
                   outline: "none",
                   borderColor: "black.400",
@@ -422,6 +432,8 @@ const LoginOtherColleges = () => {
                     number: e.target.value
                   }))}
                   placeholder="Your phone no."
+                  borderColor= "black.400"
+                  color={"black.800"}
                   _focus={{
                     outline: "none",
                     borderColor: "black.400",
@@ -448,6 +460,8 @@ const LoginOtherColleges = () => {
                     otp: e.target.value
                   }))}
                   placeholder="Verification Code"
+                  borderColor= "black.400"
+                  color={"black.800"}
                   _focus={{
                     outline: "none",
                     borderColor: "black.400",
@@ -469,7 +483,9 @@ const LoginOtherColleges = () => {
             <FormControl isRequired display={phoneVerification.status === PHONE_VERIFICATION_STATUS.SENT_VERIFIED ? "none" : "block"}>
               <Button bg="red.400" onClick={login}
                       disabled={!(phoneVerification.number.length === 10)}
-                      m={2} color="white"
+                      m={2} color="white" 
+                      borderColor= "black.400"
+                      // color={"black.800"}
                       _hover={{
                         bg: "red.900",
                         }}>
@@ -481,6 +497,7 @@ const LoginOtherColleges = () => {
                 size="lg"
                 bg={"red.500"}
                 color={"white"}
+                borderColor= "black.400"
                 _hover={{
                   bg: "red.900",
                   }}

@@ -25,7 +25,6 @@ import {
 import { EditIcon } from "@chakra-ui/icons";
 import Layout from "../components/layout";
 import Head from "next/head";
-//import Background from "../components/misc/Background";
 import { useState, useEffect } from "react";
 import { API_BASE_URL } from "../config";
 import * as cookie from "cookie";
@@ -51,9 +50,9 @@ function RadioCard(props) {
         borderRadius="md"
         boxShadow="md"
         _checked={{
-          bg: "purple.400",
+          bg: "red.400",
           color: "white",
-          borderColor: "purple.600",
+          borderColor: "red.600",
         }}
         _focus={{
           boxShadow: "outline",
@@ -239,15 +238,16 @@ export default function Profile(props) {
           h={{ base: "auto", lg: "130vh" }}
           w={"100vw"}
           flexDir={"column"}
-          // className="mobileBg"
+          
+          className="bgProfile"
         >
           <div className="profileEditDiv" >
           <Center bg="transparent" h={{ base: "13vh", md: "15vh" }}/>
           <Stack align={"center"}>
-            <Heading fontSize={"4xl"} textAlign={"center"} color="#805D93">
+            <Heading fontSize={"4xl"} textAlign={"center"} color="red.800">
               Profile
             </Heading>
-            {/* <Text fontSize={"2xl"} color={"purple.500"}>
+            {/* <Text fontSize={"2xl"} color={"red.500"}>
               to participate in all events ✌️
             </Text> */}
           </Stack>
@@ -290,13 +290,13 @@ export default function Profile(props) {
                       }}
                     />
                     <Button
-                      bg="purple.800"
+                      bg="red.800"
                       onClick={randomAvatar}
                       m={2}
                       ml={5}
                       color="white"
                       _hover={{
-                        bg: "purple.500",
+                        bg: "red.500",
                       }}
                     >
                       SHUFFLE
@@ -343,10 +343,10 @@ export default function Profile(props) {
                     <FormLabel>Department</FormLabel>
                     <Flex wrap="wrap">
                         <Button 
-                        bg="purple.800"
+                        bg="red.800"
                         color="white"
                         _hover={{
-                        bg: "purple.500",
+                        bg: "red.500",
                       }}>{profile.department}</Button>
                     </Flex>
                   </FormControl>
@@ -405,7 +405,7 @@ export default function Profile(props) {
                       </InputRightElement>
                     </InputGroup>
                     {editPhone && (
-                      <Button bg="purple.400" onClick={login} m={2} color="white">
+                      <Button bg="red.400" onClick={login} m={2} color="white">
                         Verify OTP
                       </Button>
                     )}
@@ -424,7 +424,7 @@ export default function Profile(props) {
                       />
                       <Button
                         onClick={verifyOTP}
-                        bg={"purple.400"}
+                        bg={"red.400"}
                         m={3}
                         color="white"
                       >
@@ -436,11 +436,11 @@ export default function Profile(props) {
                     <Button
                       loadingText="Submitting"
                       size="lg"
-                      bg={"purple.800"}
+                      bg={"red.800"}
                       color={"white"}
                       onClick={updateProfile}
                       _hover={{
-                        bg: "purple.500",
+                        bg: "red.500",
                       }}
                     >
                       Save Profile

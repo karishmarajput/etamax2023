@@ -162,7 +162,7 @@ const LoginFormNew = () => {
                 boxShadow={"lg"}
                 p={8}
                 minW="100%"
-                className="internalboxcheckout"
+                className="internalboxcheckout box1Checkout"
                 minH={"60vh"}
                 >
                   

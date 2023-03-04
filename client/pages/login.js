@@ -32,6 +32,7 @@ export default function Login(props) {
         w="100vw"
         alignItems="center"
         borderRadius="lg"
+        className="bgLogin"
       >
         <Center>
           <Tabs

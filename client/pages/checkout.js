@@ -37,22 +37,14 @@ export default function Checkout() {
         <link rel="shortcut icon" href="/images/favicon.ico" />
       </Head>
       <Layout>
-      <Background />
         {user && (
           
           <Center
-            //backgroundImage={"assets/checkout.svg"}
-            backgroundSize={"cover"}
-            backgroundPosition={"center"}
-            backgroundRepeat={"no-repeat"}
-            objectFit={"cover"}
-            // backgroundPosition={"center"}
-            // backgroundSize={"cover"}
             minH={"100vh"}
             h={{ base: "auto", lg: "auto" }}
             w={"100vw"}
             flexDir={"column"}
-            // className="mobileBg"
+            className="bgCheckout"
           >
             <Center bg="transparent" h={{ base: "13vh", md: "0vh" }} />
             <Center
@@ -60,7 +52,7 @@ export default function Checkout() {
               w={{ base: "97%", lg: "90%" }}
               h={{ base: "95%", lg: "90%" }}
               p="10px"
-              flexDirection={["row", "row"]}
+              flexDirection={["column", "row"]}
               gridGap={"10"}
             >
               <Center

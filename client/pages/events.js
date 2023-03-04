@@ -180,8 +180,8 @@ export default function Events(props) {
   return (
     <>
       <Head>
-        <title>FACES-22 | Events</title>
-        <meta name="FACES-22" content="Events" />
+        <title>ETAMAX-23 | Events</title>
+        <meta name="ETAMAX-23" content="Events" />
         <meta
           name="description"
           content="Here is the list of events for this year"
@@ -197,7 +197,8 @@ export default function Events(props) {
           h="auto"
           w="100vw"
           maxW="100vw"
-          className="box1Checkout"
+          // className="box1Checkout"
+          className="bgEvent"
         >
           <Flex
             maxW="100vw"
@@ -211,11 +212,8 @@ export default function Events(props) {
             
             >
               <Box w="80%">
-                <Heading color="pink.300" fontSize="6xl">
-                  FACES-22{" "}
-                  <Text fontSize="8xl" fontFamily="Birthstone Bounce">
-                    Udaan
-                  </Text>
+                <Heading color="red.800" fontSize="6xl">
+                  OUR EXCITING EVENTS{" "}
                 </Heading>
               </Box>
               <Box mt={4} w="83%" p="20px">
