@@ -20,11 +20,13 @@ def check_overlapping(start_time1, end_time1, start_time2, end_time2):
 
 
 def is_time_between(begin_time, end_time, check_time=None):
-    check_time = check_time or datetime.utcnow().time()
+    # check_time = check_time or datetime.utcnow().time()
     if begin_time < end_time:
-        return begin_time > check_time > end_time
+        # return begin_time > check_time > end_time
+        return begin_time >= check_time and check_time <end_time
     else:
-        return end_time > check_time > begin_time
+        # return end_time > check_time > begin_time
+        return False
 
 class EventListView(APIView):
   def get(self, request):
@@ -75,7 +77,7 @@ class EventRegiterView(APIView):
       participations = user.participations.all()
       for p in participations:
         e = p.event
-        print(e.start, e.end, event.start, event.day == e.day)
+        # print(e.start, e.end, event.start, event.day == e.day)
         if event.day == e.day and is_time_between(e.start, e.end, event.start):
           return [e,True]
       return [None, False]
