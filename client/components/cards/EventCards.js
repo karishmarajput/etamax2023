@@ -131,6 +131,7 @@ export default function EventCard({ event }) {
       .then((res) => res.json())
       .then((res) => {
         if (res.success) {
+          console.log(event.category)
           ga.event({
             action: "Event Registration",
             params: {
@@ -361,6 +362,28 @@ export default function EventCard({ event }) {
                     Cultural
                   </Badge>
                 ) : null}
+                {event.category == "S" ? (
+                  <Badge
+                    ml="auto"
+                    bg={"red.700"}
+                    color="white"
+                    fontSize={{ base: "10pt", md: "14pt" }}
+                    borderRadius="5px"
+                  >
+                    Seminar
+                  </Badge>
+                ) : null}
+                {event.category == "O" ? (
+                  <Badge
+                    ml="auto"
+                    bg={"red.700"}
+                    color="white"
+                    fontSize={{ base: "10pt", md: "14pt" }}
+                    borderRadius="5px"
+                  >
+                    Others
+                  </Badge>
+                ) : null}
                 {event.category == "T" ? (
                   <Badge
                     ml="auto"
@@ -372,7 +395,7 @@ export default function EventCard({ event }) {
                     Technical
                   </Badge>
                 ) : null}
-                {event.category == "S" ? (
+                {event.category == "E" ? (
                   <Badge
                     ml="auto"
                     bg={"green.700"}

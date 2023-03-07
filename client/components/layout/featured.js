@@ -8,25 +8,25 @@ export default function Featured(){
             <div class="item">
                 <div class="polaroid">
                     <img src="https://image.ibb.co/b8UJBc/administration_architecture_big_ben_221166.jpg"/>
-                    <div class="caption">yoyo</div>
+                    <div class="caption">Featured-Event-1</div>
                 </div>
             </div>
 
             <div class="item">
                 <div class="polaroid">
                     <img src="https://image.ibb.co/mmyvrc/anniversary_balloons_birthday_68369.jpg"/>
-                    <div class="caption">gfjh</div>
+                    <div class="caption">Featured-Event-2</div>
                 </div>
             </div>
 
             <div class="item">
                 <div class="polaroid">
                     <img src="https://image.ibb.co/hQaarc/antique_blur_camera_828378.jpg"/>
-                    <div class="caption">Vintage life </div>
+                    <div class="caption">Featured-Event-3</div>
                 </div>
             </div>
 
-            <div class="item">
+            {/* <div class="item">
                 <div class="polaroid">
                     <img src="https://image.ibb.co/crFarc/pexels_photo_100756.jpg"/>
                     <div class="caption">jbunhknj</div>
@@ -44,7 +44,7 @@ export default function Featured(){
                     <img src="https://image.ibb.co/fvekrc/action_adult_art_673649.jpg"/>
                     <div class="caption">nhnijkjnjki</div>
                 </div>
-            </div>
+            </div> */}
         </div>
         </featured>
 
