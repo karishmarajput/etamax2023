@@ -7,7 +7,8 @@ class UserManager(BaseUserManager):
     Custom user model manager where email is the unique identifiers
     for authentication instead of usernames.
   """
-  def create_user_bulk(self,name,roll_no, email,semester,department, password, **extra_fields):
+  def create_user_bulk(self,name,roll_no, email, semester, department, password, **extra_fields):
+    # , phone_no
       """
       Create and save a User with the given email and password.
       """
@@ -18,13 +19,15 @@ class UserManager(BaseUserManager):
         raise ValueError('The Email must be set')
 
       email = self.normalize_email(email)
-      
+      print(phone_no)
       user = self.model(roll_no=roll_no,name = name, email=email,semester= semester,department= department, **extra_fields)
+      # phone_no= phone_no,
       user.set_password(password)
       user.save()
       return user
 
   def create_user(self, roll_no, email, password, **extra_fields):
+    # , phone_no
       """
       Create and save a User with the given email and password.
       """
@@ -74,7 +77,7 @@ class UserManager(BaseUserManager):
   #   #     raise ValueError(_('Superuser must have is_superuser=True.'))
   #   import csv
 
-  #   with open(r'C:\Users\Dell\Desktop\FACES-22_E\backend\users\data.csv', newline='') as csvfile:
+  #   with open(r'C:/Users/prati/OneDrive/Desktop/etamax2023/backend/users/data.csv', newline='') as csvfile:
   #     spamreader = csv.reader(csvfile, delimiter=',', quotechar='|')
 
   #     for row in spamreader:          
@@ -82,9 +85,9 @@ class UserManager(BaseUserManager):
   #         # AD, 5, 5@gmail.com, Comp, 5, 13pCqSnayL,
   #         # row.pop()
   #         #print(row)
-  #         row.pop(6)
+  #         row.pop(7)
   #         print(row)
-  #         [name, roll_no, email, department, semester,password] = row
+  #         [name, roll_no, email, department, semester,password, phone_no] = row
   #         # roll_no=
   #         roll_no = roll_no.replace(',','')
   #         roll_no = roll_no.replace(' ','')
@@ -96,9 +99,12 @@ class UserManager(BaseUserManager):
   #         department = department.replace(' ','')
   #         email = email.replace(',','')
   #         email = email.replace(' ','')
+  #         phone_no = phone_no.replace(',','')
+  #         phone_no = phone_no.replace(' ','')
   #         name = name.replace(',','')
   #         print(password)
+  #         print(phone_no)
   #         # if you want to createsuperuser create_user(....) instead of create_user_bulk(...) and add true to superuser and staff and comment above code. 56-66 line
-  #         self.create_user_bulk(name,roll_no, email,semester,department, password,**extra_fields)
+  #         self.create_user_bulk(name,roll_no, email,semester,department, password, phone_no,**extra_fields)
   #     # create_users()    
-  #   return self.create_user_bulk(name,roll_no, email,semester,department, password,**extra_fields)
+  #   return self.create_user_bulk(name,roll_no, email,semester,department, password, phone_no,**extra_fields)

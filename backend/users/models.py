@@ -45,7 +45,7 @@ class User(AbstractBaseUser, PermissionsMixin):
 
   money_owed = models.DecimalField(_("Money Owed"),decimal_places=2,max_digits=10, default=0.00)
   has_filled_profile = models.BooleanField(_("Has Filled Profile"), default=True)
-  criteria = models.TextField(_("Criteria JSON (DONT FILL THIS)"), default='{"C": 1, "T": 2, "S": 0}')
+  criteria = models.TextField(_("Criteria JSON (DONT FILL THIS)"), default='{"C": 0, "T": 0, "E": 0, "S": 0, "O": 0}')
 
   is_staff = models.BooleanField(default=False)
   is_superuser = models.BooleanField(default=False)
@@ -127,7 +127,7 @@ def make_user_when_approved(sender, instance, created, **kwargs):
       import csv 
      
       rows = [ user.name, user.roll_no,user.email,pwd,user.phone_no,user.department,user.semester,user.college] 
-      f = open('/home/karishma/Documents/projects/etamax2023/backend/users/reg_records.csv', 'a')
+      f = open('/C:/Users/prati/OneDrive/Desktop/etamax2023/backend/users/reg_records.csv', 'a')
       writer = csv.writer(f)
       writer.writerow(rows)
       f.close()
@@ -152,6 +152,8 @@ class Participation(models.Model):
 def update_criteria_after_delete(sender, instance, using, **kwargs):
   def update_criteria(user, event):
     criteria = json.loads(user.criteria)
+    if event.category=="S":
+        criteria["T"] -=1
     criteria[event.category] -= 1
     print(criteria, event.category)
     user.criteria = json.dumps(criteria)
