@@ -7,7 +7,7 @@ class UserManager(BaseUserManager):
     Custom user model manager where email is the unique identifiers
     for authentication instead of usernames.
   """
-  def create_user_bulk(self,name,roll_no, email,semester,department, password, **extra_fields):
+  def create_user_bulk(self,name,roll_no, email,semester,department, password,phone_no, **extra_fields):
       """
       Create and save a User with the given email and password.
       """
@@ -19,7 +19,7 @@ class UserManager(BaseUserManager):
 
       email = self.normalize_email(email)
       
-      user = self.model(roll_no=roll_no,name = name, email=email,semester= semester,department= department, **extra_fields)
+      user = self.model(roll_no=roll_no,name = name, email=email,semester= semester,department= department,phone_no= phone_no, **extra_fields)
       user.set_password(password)
       user.save()
       return user
@@ -82,9 +82,9 @@ class UserManager(BaseUserManager):
           # AD, 5, 5@gmail.com, Comp, 5, 13pCqSnayL,
           # row.pop()
           #print(row)
-          row.pop(6)
+          # row.pop(7)
           print(row)
-          [name, roll_no, email, department, semester,password] = row
+          [name, roll_no, email, department, semester, password, phone_no] = row
           # roll_no=
           roll_no = roll_no.replace(',','')
           roll_no = roll_no.replace(' ','')
@@ -96,9 +96,11 @@ class UserManager(BaseUserManager):
           department = department.replace(' ','')
           email = email.replace(',','')
           email = email.replace(' ','')
+          phone_no = phone_no.replace(',','')
+          phone_no = phone_no.replace(' ','')
           name = name.replace(',','')
           print(password)
           # if you want to createsuperuser create_user(....) instead of create_user_bulk(...) and add true to superuser and staff and comment above code. 56-66 line
-          self.create_user_bulk(name,roll_no, email,semester,department, password,**extra_fields)
+          self.create_user_bulk(name,roll_no, email,semester,department, password,phone_no,**extra_fields)
       # create_users()    
-    return self.create_user_bulk(name,roll_no, email,semester,department, password,**extra_fields)
+    return self.create_user_bulk(name,roll_no, email,semester,department, password,phone_no, **extra_fields)
