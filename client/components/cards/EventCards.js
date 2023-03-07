@@ -231,7 +231,8 @@ export default function EventCard({ event }) {
         w={["95%", "95%", "75%", "60%"]}
         h="auto"
         flexDirection="column"
-        bgColor="#e96196"
+        // bgColor="#e96196"
+        bgColor="orange.800"
         backgroundImage="linear-gradient(315deg, #e96196 0%, #ffffff 74%)"
         borderRadius="10px"
         boxShadow="lg"

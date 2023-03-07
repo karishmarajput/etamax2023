@@ -29,8 +29,12 @@ export default function Footer() {
             Karishma
           </Link>
           ,{" "}
-          <Link target="_blank" href="https://github.com/karishmarajput">
+          <Link target="_blank" href="https://www.behance.net/Agrima_Kumar/projects">
             Agrima
+          </Link>
+          ,{" "}
+          <Link target="_blank" href="https://github.com/dark-shad">
+            Pratik
           </Link>
           ,{" "}
           <Link target="_blank" href="https://github.com/blanklavender">
@@ -45,10 +49,6 @@ export default function Footer() {
             Aaryan
           </Link>
           ,{" "}
-          <Link target="_blank" href="https://github.com/dark-shad">
-            Pratik
-          </Link>
-          ,&nbsp;
           <Link
             target="_blank"
             href="https://github.com/VinayakPatkar"

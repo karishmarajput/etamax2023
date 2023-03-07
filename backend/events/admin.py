@@ -32,9 +32,9 @@ class SeatsFilterList(admin.SimpleListFilter):
 
 @admin.register(Event)
 class EventAdmin(admin.ModelAdmin):
-  list_display = ['event_code', 'day', 'start', 'end', 'title']
-  list_filter = ('is_featured',)
-
+  list_display = ['title', 'day', 'start', 'end']
+  list_filter = ('is_featured', 'day', 'category')
+  search_fields = ('event_code', 'title', 'description', )
   actions = ['export_as_csv']
 
   @admin.action(description="Download Csv")

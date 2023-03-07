@@ -220,7 +220,7 @@ export default function Profile(props) {
   return (
     <>
       <Head>
-        <title>FACES-22 | Profile</title>
+        <title>ETAMAX-23 | Profile</title>
         <link rel="shortcut icon" href="/images/favicon.ico" />
       </Head>
       <style jsx>{`

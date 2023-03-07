@@ -29,7 +29,7 @@ OTP_VERIFY_SECRET = "BRUH"
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False if os.getenv('DJANGO_DEBUG') == 'False' else True 
 
-ALLOWED_HOSTS = ['127.0.0.1','etamax.fcrit.ac.in','faces.fcrit.ac.in','122.200.18.86','etamax22.herokuapp.com', os.getenv("PUBLIC_IP", "localhost")]
+ALLOWED_HOSTS = ['34.100.240.214','127.0.0.1','etamax.fcrit.ac.in','faces.fcrit.ac.in','122.200.18.86','etamax22.herokuapp.com', os.getenv("PUBLIC_IP", "localhost")]
 
 # Application definition
 
@@ -155,13 +155,13 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATIC_URL = '/static/'
 
 # Extra places for collectstatic to find static files.
-STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, "static"),
-)
+# STATICFILES_DIRS = (
+#     os.path.join(BASE_DIR, "static"),
+# )
 
 # STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
