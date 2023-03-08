@@ -64,7 +64,7 @@ export default function AboutCouncil() {
     },
     {
       name: "Varad Tambe",
-      post: "Sponsorship Head",
+      post: "Marketing Head",
       phNo: "+91 9136340545",
       igId: "varad.tambe",
     },
@@ -130,7 +130,7 @@ export default function AboutCouncil() {
     },
     {
       name: "Snowson Joseph ",
-      post: "Asst.  Documentation ",
+      post: "Asst. Marketing ",
       phNo: "+91 9152067325",
       igId: "Snows0n",
     },
@@ -155,7 +155,7 @@ export default function AboutCouncil() {
         >
           <Center flexDir="column" gridGap={"5"}>
             <Center py={{ base: "50px", lg: "30px" }}>
-              <Heading fontSize={{ base: "20pt", lg: "auto" }} color="purple.900">
+              <Heading fontSize={{ base: "20pt", lg: "auto" }} color="red.900">
                 Contact the council members
               </Heading>
             </Center>
@@ -164,7 +164,7 @@ export default function AboutCouncil() {
                 <Box p="15px" borderRadius={"10px"} className="box1Checkout" key={index}>
                   <Center>
                     <Text
-                      color={"purple.900"}
+                      color={"red.900"}
                       fontSize={{ base: "2xl", md: "3xl" }}
                     >
                       {member.name}
@@ -172,7 +172,7 @@ export default function AboutCouncil() {
                   </Center>
                   <Center>
                     <Text
-                      color={"purple.800"}
+                      color={"red.800"}
                       fontWeight="bold"
                       fontSize={{ base: "xl", md: "2xl" }}
                     >
@@ -180,19 +180,19 @@ export default function AboutCouncil() {
                     </Text>
                   </Center>
                   <Center gridGap={3}>
-                    <Icon as={BsPhone} size={"45px"} color={"purple.800"} />
+                    <Icon as={BsPhone} size={"45px"} color={"red.800"} />
                     <Text
-                      color={"purple.800"}
+                      color={"red.800"}
                       fontSize={{ base: "xl", md: "2xl" }}
                     >
                       {member.phNo}
                     </Text>
                   </Center>
                   <Center gridGap={3}>
-                    <Icon color={"purple.800"} as={BsInstagram} size="45px" />
+                    <Icon color={"red.800"} as={BsInstagram} size="45px" />
                     <Link
                       href={`https://instagram.com/${member.igId}`}
-                      color={"purple.800"}
+                      color={"red.800"}
                       fontSize={{ base: "xl", md: "2xl" }}
                       target="_blank"
                     >

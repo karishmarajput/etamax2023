@@ -222,8 +222,8 @@ export default function EventCard({ event }) {
     setValues({ ...values });
   }
 
-  // background-color: #e96196;
-  // background-image: linear-gradient(315deg, #e96196 0%, #ffffff 74%);
+  // background-color: #e96161;
+  // background-image: linear-gradient(315deg, #e96161 0%, #ffffff 74%);
   return (
     <>
       <Flex
@@ -233,7 +233,7 @@ export default function EventCard({ event }) {
         flexDirection="column"
         // bgColor="#e96196"
         bgColor="orange.800"
-        backgroundImage="linear-gradient(315deg, #e96196 0%, #ffffff 74%)"
+        backgroundImage="linear-gradient(315deg, #e96161 0%, #ffffff 74%)"
         borderRadius="10px"
         boxShadow="lg"
         _hover={{
@@ -274,7 +274,7 @@ export default function EventCard({ event }) {
               bg="transparent"
               _hover={{
                 bg: "white",
-                color: "purple.300",
+                color: "red.500",
                 width: "80%",
               }}
               color="white"
@@ -344,7 +344,7 @@ export default function EventCard({ event }) {
               >
                 <Badge
                   ml="auto"
-                  bg="purple.900"
+                  bg="red.900"
                   color="white"
                   fontSize={{ base: "10pt", md: "14pt" }}
                   borderRadius="5px"
@@ -431,7 +431,7 @@ export default function EventCard({ event }) {
             gridGap="3"
           >
             <Flex
-              color="purple.400"
+              color="red.500"
               className="listMarginLeft"
               fontSize={{ base: "12pt", md: "17pt" }}
               flexDirection="column"
@@ -454,7 +454,7 @@ export default function EventCard({ event }) {
               </Box>
             </Flex>
             <Flex
-              color="purple.400"
+              color="red.500"
               className="listMarginLeft"
               fontSize={{ base: "12pt", md: "17pt" }}
               flexDirection="column"
@@ -481,7 +481,7 @@ export default function EventCard({ event }) {
             <Flex p="15px" gridGap="5" flexDir="column">
               {event.size > 1 && (
                 <Text
-                  color="purple.400"
+                  color="red.500"
                   fontWeight="bold"
                   fontSize={{ base: "12pt", md: "17pt" }}
                 >
@@ -491,14 +491,14 @@ export default function EventCard({ event }) {
               )}
               <Text
                 fontSize={{ base: "12pt", md: "17pt" }}
-                color={event.max_seats - event.seats < 10 ? "red" : "purple.400"}
+                color={event.max_seats - event.seats < 10 ? "red" : "red.500"}
                 fontWeight="bold"
               >
                 Seats booked: {event.seats} / {event.max_seats}
               </Text>
               <Text
                 fontSize={{ base: "12pt", md: "18pt" }}
-                color="purple.400"
+                color="red.500"
                 fontWeight="bold"
               >
                 Event price:{" "}
@@ -506,7 +506,7 @@ export default function EventCard({ event }) {
               </Text>
               <Text
                 fontSize={{ base: "12pt", md: "18pt" }}
-                color="purple.400"
+                color="red.500"
                 fontWeight="bold"
               >
                 prize:{" "}
@@ -517,14 +517,14 @@ export default function EventCard({ event }) {
             {user && event.team_size > 1 && !isRegistered && (
               <Flex flexDirection="column" gridGap="3">
                 <Flex
-                  bg="purple.200"
+                  bg="red.200"
                   borderRadius="10px"
                   mt={4}
                   flexDirection="column"
                   p="20px"
                   gridGap="3"
                 >
-                  <Text color="purple.400" fontSize="15pt" fontWeight="bold">
+                  <Text color="red.500" fontSize="15pt" fontWeight="bold">
                     Enter team mate information{" "}
                     <span style={{ color: "red" }}>
                       Enter your own ROLL NO as well !!
@@ -596,7 +596,7 @@ export default function EventCard({ event }) {
                     // color="whitesmoke"
                     gridGap={2}
                     alignItems="center"
-                    bgColor="purple.200"
+                    bgColor="red.200"
                     borderRadius="md"
                   >
                     <Text>Registered</Text>
