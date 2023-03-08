@@ -46,8 +46,7 @@ export default function Footer() {
             pl="10px"
             pt="1px"
             pb="4px"
-            ><span style={{ fontWeight: 'bold' }}>Criteria for FCRIT Students</span>: 1 Cultural and 2 Technical events.
-            <br />Note: Seminars are under the Technical event and only one seminar can be taken.
+            ><span style={{ fontWeight: 'bold' }}>Criteria for FCRIT Students</span>: 1 cultural , 1 technical and only 1 Department seminar.
             <br /><span style={{ fontWeight: 'bold' }}>Steps to register</span>
             <br />1. For FCRIT students you will recieve your credentials via mail directly.
             But for non-FCRIT students you have to register on our website and once the team approves you then only you will get your credentials via registered mail-id.
