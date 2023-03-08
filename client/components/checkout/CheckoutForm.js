@@ -120,7 +120,7 @@ export default function CheckoutForm({ participations, user, setEvents }) {
       console.log('cri'+c["C"] > 1)
       toast({
         title:
-          "Criteria Not Satisfied! Atleast 2 cultural and 1 technical",
+          "Criteria Not Satisfied! Atleast 1 cultural , 2 technical and only 1 Department seminar",
         status: "error",
         duration: 3000,
         position: "top-right",

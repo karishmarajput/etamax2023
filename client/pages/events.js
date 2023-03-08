@@ -226,10 +226,10 @@ export default function Events(props) {
 
                 </Text>
               </Box>
+          <Disclaimer />
             </Center>
           </Flex>
 
-          <Disclaimer />
 
 
           <Center w="100%" gridGap={"3"}>

@@ -46,9 +46,20 @@ export default function Footer() {
             pl="10px"
             pt="1px"
             pb="4px"
-            >
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempo incididunt ut labore 
-                et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco!
+            ><span style={{ fontWeight: 'bold' }}>Criteria for FCRIT Students</span>: 1 Cultural and 2 Technical events.
+            <br />Note: Seminars are under the Technical event and only one seminar can be taken.
+            <br /><span style={{ fontWeight: 'bold' }}>Steps to register</span>
+            <br />1. For FCRIT students you will recieve your credentials via mail directly.
+            But for non-FCRIT students you have to register on our website and once the team approves you then only you will get your credentials via registered mail-id.
+
+            <br />2. After login you can register for different events in the event's section.
+
+            <br />3. Once you have choosen your event and registered for the events, then you need to go to the checkout page and confirm your registration.
+
+            <br />4. Your slots will be confirmed only If you have completed the payment to any of the council's desk.
+            Untill then your slot is unconfirmed and some other participant can take it.
+
+            Slots will be confirmed on <span style={{ fontWeight: 'bold' }}>FIRST COME FIRST SERVE</span> basis.
             </Text>
         </Flex>
 

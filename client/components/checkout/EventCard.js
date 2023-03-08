@@ -156,6 +156,28 @@ export default function EventCard({
                 Cultural
               </Badge>
             ) : null}
+            {participation.event.category == "S" ? (
+              <Badge
+                ml="auto"
+                bg={"red.700"}
+                color="white"
+                fontSize={"10pt"}
+                borderRadius="5px"
+              >
+                Seminar
+              </Badge>
+            ) : null}
+            {participation.event.category == "O" ? (
+              <Badge
+                ml="auto"
+                bg={"red.700"}
+                color="white"
+                fontSize={"10pt"}
+                borderRadius="5px"
+              >
+                Others
+              </Badge>
+            ) : null}
             {participation.event.category == "T" ? (
               <Badge
                 ml="auto"
@@ -167,7 +189,7 @@ export default function EventCard({
                 Technical
               </Badge>
             ) : null}
-            {participation.event.category == "S" ? (
+            {participation.event.category == "E" ? (
               <Badge
                 ml="auto"
                 bg={"green.700"}
