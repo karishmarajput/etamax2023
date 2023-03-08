@@ -69,7 +69,7 @@ export default function Home(props) {
         <meta name="title" content="ETAMAX-22" />
         <meta
           name="description"
-          content="Annual sports and cultural festival organised at F.C.R.I.T"
+          content="Annual technical and cultural festival organised at F.C.R.I.T"
         />
       </Head>
       
