@@ -67,8 +67,6 @@ class EventRegiterView(APIView):
     def update_criteria(user: User, event: Event) -> User:
       user_criteria = json.loads(user.criteria)
       print(event.category)
-      if event.category=="S":
-        user_criteria["T"] +=1
       user_criteria[event.category] += 1
       user.criteria = json.dumps(user_criteria)
       return user

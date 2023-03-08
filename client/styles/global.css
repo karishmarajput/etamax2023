@@ -45,9 +45,9 @@ body{
 
 .bgEvent{
   background-image: url("/featured-etamax.png") !important;
-  background-size: 100% 100%;
+  background-size: 100vw 100vh;
+  background-repeat: repeat-y;
   background-position: center;
-  /* background-repeat: repeat; */
   object-fit: contain;
   position:relative;
   top: -10px;
@@ -95,7 +95,7 @@ body{
 
 @media screen and (max-width: 768px) {
   .homeBackground{
-    background-image: url("/home-mobile.png") !important;
+    background-image: url("/mobile-etamax.png") !important;
     background-size: 100% 100%;
     background-position: center;
     object-fit: contain;
@@ -124,7 +124,8 @@ body{
 
   .bgEvent{
     background-image: url("/featured-mobile.png") !important;
-    background-size: 100% 100%;
+    background-size: 100vw 100vh;
+    background-repeat: repeat-y;
     background-position: center;
     object-fit: contain;
     position:relative;

@@ -152,8 +152,6 @@ class Participation(models.Model):
 def update_criteria_after_delete(sender, instance, using, **kwargs):
   def update_criteria(user, event):
     criteria = json.loads(user.criteria)
-    if event.category=="S":
-        criteria["T"] -=1
     criteria[event.category] -= 1
     print(criteria, event.category)
     user.criteria = json.dumps(criteria)
