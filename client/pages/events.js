@@ -252,7 +252,9 @@ export default function Events(props) {
               >
                 <option value="T">Technical</option>
                 <option value="C">Cultural</option>
-                <option value="S">E-Sports</option>
+                <option value="S">Seminar</option>
+                <option value="E">E-Sports</option>
+                <option value="O">Others</option>
               </Select>
               <Select
                 value={daySelect}
