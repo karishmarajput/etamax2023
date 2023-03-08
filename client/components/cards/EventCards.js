@@ -460,7 +460,7 @@ export default function EventCard({ event }) {
               flexDirection="column"
               p="10px"
             >
-              <b style={{ marginLeft: "10px" }}>Event Rules</b>
+              <b style={{ marginLeft: "10px" }}>Event Venue</b>
               <Box p="10px">
                 {console.log(event.event_rules)}
                 {event.event_rules ? (
