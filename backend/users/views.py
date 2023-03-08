@@ -184,7 +184,7 @@ class UserCheckout(APIView):
     def check_criteria(user) -> bool:
       criteria = json.loads(user.criteria)
       print(criteria)
-      if criteria['C'] >= 1 and criteria['T'] >= 2 and criteria['S'] <= 1:
+      if criteria['C'] >= 1 and criteria['T'] >= 1 and criteria['S'] == 1:
         return False
       else:
         return True
