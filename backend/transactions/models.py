@@ -17,7 +17,7 @@ class Transaction(models.Model):
 
 
   def __str__(self) -> str:
-      return self.transaction_id
+      return self.upi_transaction_id
 
 
 @receiver(post_save, sender=Transaction)

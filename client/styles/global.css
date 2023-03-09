@@ -302,11 +302,11 @@ body::-webkit-scrollbar-track {
     scrollbar-width: none;
   }
   .mobileBg{
-    content:url("https://github.com/dark-shad/etamax_imagaes/blob/main/udaan%20fone.png?raw=true") !important;
-    z-index: -2;
+    /* content:url("https://github.com/dark-shad/etamax_imagaes/blob/main/udaan%20fone.png?raw=true") !important;
+    z-index: -2; */
   }
   .css-1xl3hdo{
-    background-image: url("https://github.com/dark-shad/etamax_imagaes/blob/main/udaan%20fone.png?raw=true") !important;
+    /* background-image: url("https://github.com/dark-shad/etamax_imagaes/blob/main/udaan%20fone.png?raw=true") !important; */
   }
 }
 .box1Checkout{
@@ -365,10 +365,16 @@ marquee div{
   max-width: 100%;
   height: auto;
 }
+@font-face {
+  font-family: PermanentMarker;
+  src: url(/PermanentMarker-Regular.ttf);
+}
+
 .caption {
   font-size: 1.8rem;
   text-align: center;
   line-height: 2em;
+  font-family: PermanentMarker;
 }
 .item {
   width: 30%;

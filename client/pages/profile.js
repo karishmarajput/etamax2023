@@ -364,7 +364,7 @@ export default function Profile(props) {
                         })
                       }
                     >
-                      {[2, 4, 6, 8].map((sem) => (
+                      {[1, 2, 4, 6, 8].map((sem) => (
                         <option key={sem} value={sem}>
                           Semester {sem}
                         </option>
@@ -380,7 +380,7 @@ export default function Profile(props) {
                       <Input
                         name="phone"
                         defaultValue={
-                          profile.phone_no && profile.phone_no.substring(3)
+                          profile.phone_no && profile.phone_no.substring(0)
                         }
                         id="phone"
                         readOnly={!editPhone}

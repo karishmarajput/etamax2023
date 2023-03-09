@@ -1,5 +1,6 @@
 from django.contrib.auth.base_user import BaseUserManager
 from django.utils.translation import ugettext_lazy as _
+import time
 
 
 class UserManager(BaseUserManager):
@@ -83,7 +84,7 @@ class UserManager(BaseUserManager):
           # row.pop()
           #print(row)
           # row.pop(7)
-          print(row)
+          # print(row)
           [name, roll_no, email, department, semester, password, phone_no] = row
           # roll_no=
           roll_no = roll_no.replace(',','')
@@ -102,5 +103,6 @@ class UserManager(BaseUserManager):
           print(password)
           # if you want to createsuperuser create_user(....) instead of create_user_bulk(...) and add true to superuser and staff and comment above code. 56-66 line
           self.create_user_bulk(name,roll_no, email,semester,department, password,phone_no,**extra_fields)
+            
       # create_users()    
     return self.create_user_bulk(name,roll_no, email,semester,department, password,phone_no, **extra_fields)

@@ -8,7 +8,7 @@ from .models import User, UserRequest , Participation
 
 @admin.register(User)
 class UserAdmin(admin.ModelAdmin):
-  list_filter = ('is_phone_no_verified', 'has_filled_profile', 'is_from_fcrit') #'money_owed')
+  list_filter = ('is_phone_no_verified', 'has_filled_profile', 'is_from_fcrit','department', 'semester') #'money_owed')
   search_fields = ('roll_no', 'name', 'email', 'phone_no')
   actions = ['export_as_csv']
 
@@ -57,7 +57,7 @@ class UserRequestAdmin(admin.ModelAdmin):
 @admin.register(Participation)
 class ParticipationAdmin(admin.ModelAdmin):
   search_fields = ('part_id', 'team_name', 'transaction__upi_transaction_id', 'transaction__transaction_id', 'members__name', 'members__roll_no', 'members__email', 'event__title')
-  list_display = ['part_id', 'team_name', 'event', 'transaction', 'is_verified']
+  list_display = ['team_name', 'event', 'is_verified', 'transaction']
   list_filter = ('is_verified', 'event__title')
   actions = ['export_as_csv']
 

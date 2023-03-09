@@ -42,5 +42,5 @@ class Event(models.Model):
 
 
   def __str__(self) -> str:
-    return f"{self.title}#{self.event_code}"
+    return f"{self.title}"
 

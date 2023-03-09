@@ -55,7 +55,7 @@ export default function Footer() {
 
             <br />3. Once you have choosen your event and registered for the events, then you need to go to the checkout page and confirm your registration.
 
-            <br />4. Your slots will be confirmed only If you have completed the payment to any of the council's desk.
+            <br />4. Your slots will be confirmed only If you have completed the <span style={{ fontWeight: 'bold' }}>Cash payment</span> to any of the <span style={{ fontWeight: 'bold' }}>Council's desk.</span>
             Untill then your slot is unconfirmed and some other participant can take it.
 
             Slots will be confirmed on <span style={{ fontWeight: 'bold' }}>FIRST COME FIRST SERVE</span> basis.

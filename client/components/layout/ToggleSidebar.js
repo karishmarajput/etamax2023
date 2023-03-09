@@ -37,7 +37,6 @@ import {
   }
 
 
-
 export default function ToggleSidebar(){
     const [isOpen, setIsopen] = useState(false);
     const [color, setColor] = useState("purple");
@@ -97,13 +96,36 @@ export default function ToggleSidebar(){
         }
       }
     }
-  
+    function useOutsideAlerter(ref) {
+      useEffect(() => {
+        function handleClickOutside(event) {
+          if (ref.current && !ref.current.contains(event.target)) {
+            if(isOpen) setIsopen(false);
+            
+          }
+        }
+        document.addEventListener("scroll", handleClickOutside);
+        document.addEventListener("mousedown", handleClickOutside);
+        return () => {
+          document.removeEventListener("mousedown", handleClickOutside);
+          document.removeEventListener("scroll", handleClickOutside);
+        };
+      }, [ref]);
+    }
+    function OutsideAlerter(props) {
+      const wrapperRef = useRef(null);
+      useOutsideAlerter(wrapperRef);
+    
+      return <div ref={wrapperRef}>{props.children}</div>;
+    }
     const ToggleSidebar = () => {
         console.log('click');
         isOpen === true ? setIsopen(false) : setIsopen(true);
     }
+
     return (
         <>
+         <OutsideAlerter>
             <div className=" sideMenu">
                 
                     <nav className="navbar navbarPadding p-0 navbar-expand-lg shadow-md">
@@ -113,11 +135,12 @@ export default function ToggleSidebar(){
                                    <HamburgerIcon boxSize={6}/>
                                 </div>
                             </div>
+                           
                             <a className="navbar-brand textNav EtamaxNavbar">ETAMAX 2023</a>
                             <a className="navbar-brand textNav "  href="/events"><img src="/event-ticket.png" className="navbarImg" /></a>
                         </div>
                     </nav>
-                    
+                   
                     <div className={`activeSlideBar sidebar ${isOpen == true ? 'active' : ''}`}>
             
                         <div className="sd-header">
@@ -126,6 +149,7 @@ export default function ToggleSidebar(){
                         </div>
                         <div className="sd-body">
                             <ul>
+                            
                             <Stack
             >
               <MenuItems
@@ -152,6 +176,20 @@ export default function ToggleSidebar(){
                 </Flex>
               </MenuItems>
 
+
+              {/* {!loggedIn && (
+                  <MenuItems
+                    isDisabled={false}
+                    color={color}
+                    to="/register"
+                    nextLink={false}
+                  > 
+                  <Flex gridGap={"4"}>
+                    <BiLogIn/>
+                    Register
+                    </Flex>
+                  </MenuItems> 
+              )}         */}
               {!loggedIn && (
                 <MenuItems
                   isDisabled={false}
@@ -165,21 +203,10 @@ export default function ToggleSidebar(){
                   </Flex>
                 </MenuItems>
                 )}
-                {!loggedIn && (
-                  <MenuItems
-                    isDisabled={false}
-                    color={color}
-                    to="/register"
-                    nextLink={false}
-                  > 
-                  <Flex gridGap={"4"}>
-                    <BiLogIn/>
-                    Register
-                    </Flex>
-                  </MenuItems> 
+                 
                 
                 
-              )}
+              
               {loggedIn && (
                 <MenuItems
                   isDisabled={false}
@@ -244,9 +271,10 @@ export default function ToggleSidebar(){
                             </ul>
                         </div>
                     </div>
+                   
                     <div className={`sidebar-overlay ${isOpen == true ? 'active' : ''}`} onClick={ToggleSidebar}></div>
            </div>
-           
+           </OutsideAlerter>
         </>
     )
 }
