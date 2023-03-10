@@ -73,14 +73,14 @@ class EventRegiterView(APIView):
 
     # ! CHECK FCRIT ONLY EVENT
     
-    def check_event_clashes(user: User, event: Event) -> list:
-      participations = user.participations.all()
-      for p in participations:
-        e = p.event
-        # print(e.start, e.end, event.start, event.day == e.day)
-        if event.day == e.day and is_time_between(e.start, e.end, event.start):
-          return [e,True]
-      return [None, False]
+    # def check_event_clashes(user: User, event: Event) -> list:
+    #   participations = user.participations.all()
+    #   for p in participations:
+    #     e = p.event
+    #     # print(e.start, e.end, event.start, event.day == e.day)
+    #     if event.day == e.day and is_time_between(e.start, e.end, event.start):
+    #       return [e,True]
+    #   return [None, False]
 
     user: User = request.user
     event_code = request.data['event_code']
@@ -103,9 +103,9 @@ class EventRegiterView(APIView):
 
 
     # checking time clashes with other events
-    [ec, result] = check_event_clashes(user, event)
-    if result:
-      return JsonResponse({"detail": f"This Event Clashes with the {ec.title} Event({ec.start} - {ec.end})", "success": False}, status=400)
+    # [ec, result] = check_event_clashes(user, event)
+    # if result:
+    #   return JsonResponse({"detail": f"This Event Clashes with the {ec.title} Event({ec.start} - {ec.end})", "success": False}, status=400)
 
     if event.team_size == 1:
       # Event is Solo Event

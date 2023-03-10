@@ -35,13 +35,13 @@ export default function Featured(){
 
             <div class="item">
                 <div class="polaroid">
-                    <img src="https://image.ibb.co/fvekrc/action_adult_art_673649.jpg"/>
+                    <img src="/featured5.png"/>
                     <div class="caption">Auto Bots Assemble</div>
                 </div>
             </div>
             <div class="item">
                 <div class="polaroid">
-                    <img src="https://image.ibb.co/fvekrc/action_adult_art_673649.jpg"/>
+                    <img src="/featured6.png"/>
                     <div class="caption">NSS Blood Camp</div>
                 </div>
             </div>

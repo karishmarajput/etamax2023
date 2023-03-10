@@ -70,10 +70,10 @@ class ParticipationAdmin(admin.ModelAdmin):
     response = HttpResponse(content_type='text/csv')
     response['Content-Disposition'] = 'attachment; filename=%s.csv' % slugify(model.__name__)
     writer = csv.writer(response)
-    writer.writerow(['Team name','part_id','event','transaction_id','Verified','Members_name'])
+    writer.writerow(['event', 'Team name', 'Members_name', 'Verified', 'transaction_id'])
     for rule in qs:
         writer.writerow(
-            [rule.team_name,rule.part_id,rule.event.title,rule.transaction,rule.is_verified,'|'.join(c.name+'_'+str(c.roll_no) for c in rule.members.all())]
+            [rule.event.title, rule.team_name,'|'.join(str(c.name)+'_'+str(c.roll_no) for c in rule.members.all()),rule.is_verified,rule.transaction]
         )
 
     return response

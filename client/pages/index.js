@@ -78,7 +78,7 @@ export default function Home(props) {
         </Flex>
         
         <FeaturedEvents events={props.events}  />
-        <Sponsors />
+        {/* <Sponsors /> */}
       </Layout>
     </>
   );

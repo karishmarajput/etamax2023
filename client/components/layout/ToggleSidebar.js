@@ -177,7 +177,7 @@ export default function ToggleSidebar(){
               </MenuItems>
 
 
-              {/* {!loggedIn && (
+              {!loggedIn && (
                   <MenuItems
                     isDisabled={false}
                     color={color}
@@ -189,7 +189,7 @@ export default function ToggleSidebar(){
                     Register
                     </Flex>
                   </MenuItems> 
-              )}         */}
+              )}        
               {!loggedIn && (
                 <MenuItems
                   isDisabled={false}

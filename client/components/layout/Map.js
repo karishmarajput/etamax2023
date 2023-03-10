@@ -1,5 +1,5 @@
 import { Flex, Text, AspectRatio, Center } from "@chakra-ui/react";
-import { FaInstagram } from "react-icons/fa";
+import { FaInstagram, FaYoutube } from "react-icons/fa";
 
 export default function Footer() {
   return (
@@ -44,7 +44,9 @@ export default function Footer() {
             pb={4}
             >
             Agnel Technical Education Complex, Sector 9-A, Vashi, Navi Mumbai, Maharashtra, India, PIN - 400703</Text>
-            
+            <Flex
+            flexDirection={["column", "row"]}
+            >
             <Flex 
             cursor="pointer"
             >
@@ -54,6 +56,17 @@ export default function Footer() {
               color="white"
               />
             </a>
+            </Flex>
+            <Flex 
+            cursor="pointer"
+            >
+            <a href="https://www.youtube.com/@fcritvashiofficial4407/videos" target="_blank">
+              <FaYoutube 
+              fontSize="30px" 
+              color="white"
+              />
+            </a>
+            </Flex>
             </Flex>
           <Text/> 
         </Flex> 
