@@ -111,8 +111,8 @@ export default function CheckoutForm({ participations, user, setEvents }) {
 
     //! CHECK CRITERIA
     let criteriaJSON = user.user.criteria;
-    console.log('criteria')
-    console.log(criteriaJSON);
+    // console.log('criteria')
+    // console.log(criteriaJSON);
     let c = JSON.parse(criteriaJSON);
     console.log("c"+c)
     if (user.user.is_from_fcrit && (c["C"] > 1)) {

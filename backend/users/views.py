@@ -237,7 +237,7 @@ class UserCheckout(APIView):
 
     try:
       user.save()
-      return JsonResponse({"detail": "Transaction ID Added Successfully!", "success": True},status=200)
+      return JsonResponse({"detail": "Transaction ID Added! Go to profile page to view events", "success": True},status=200)
     except Exception as e:
       print(e)
       return JsonResponse({"detail": "Something Went Wrong", "success": False},status=400)

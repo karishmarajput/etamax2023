@@ -32,10 +32,14 @@ class SeatsFilterList(admin.SimpleListFilter):
 
 @admin.register(Event)
 class EventAdmin(admin.ModelAdmin):
-  list_display = ['title', 'day', 'start', 'end']
-  list_filter = ('is_featured', 'day', 'category')
-  search_fields = ('event_code', 'title', 'description', )
+  list_display = ['title', 'day', 'seats_','category','entry_fee','start', 'end','team_size']
+  list_filter = ('is_featured', 'day', 'category','team_size')
+  search_fields = ('event_code', 'title', 'description',)
   actions = ['export_as_csv']
+
+  def seats_(self, obj):
+      return str(obj.seats)+"/"+str(obj.max_seats)
+  seats_.short_description = 'Seats'
 
   @admin.action(description="Download Csv")
   def export_as_csv(self, request, queryset):

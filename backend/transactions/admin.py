@@ -57,8 +57,8 @@ class DateFilterList(admin.SimpleListFilter):
 
 @admin.register(Transaction)
 class EventAdmin(admin.ModelAdmin):
-  list_display = ['upi_transaction_id', 'timestamp', 'event_amount', 'total_amount', 'is_paid', 'is_verified']
-  list_filter = ('is_paid','is_verified')
+  list_display = ['upi_transaction_id', 'event_amount', 'total_amount', 'is_verified', 'timestamp']
+  list_filter = ('is_verified',)
   search_fields = ('upi_transaction_id',)
   actions = ['export_as_csv']
 

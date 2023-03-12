@@ -41,68 +41,68 @@ class UserManager(BaseUserManager):
       user.set_password(password)
       user.save()
       return user
-  # def create_superuser(self,roll_no, email, password, **extra_fields):
-  #     """
-  #     Create and save a SuperUser with the given email and password.
-  #     """
-  #     extra_fields.setdefault('is_staff', True)
-  #     extra_fields.setdefault('is_superuser', True)
-  #     extra_fields.setdefault('is_active', True)
+  def create_superuser(self,roll_no, email, password, **extra_fields):
+      """
+      Create and save a SuperUser with the given email and password.
+      """
+      extra_fields.setdefault('is_staff', True)
+      extra_fields.setdefault('is_superuser', True)
+      extra_fields.setdefault('is_active', True)
 
-  #     if extra_fields.get('is_staff') is not True:
-  #         raise ValueError(_('Superuser must have is_staff=True.'))
-  #     if extra_fields.get('is_superuser') is not True:
-  #         raise ValueError(_('Superuser must have is_superuser=True.'))
+      if extra_fields.get('is_staff') is not True:
+          raise ValueError(_('Superuser must have is_staff=True.'))
+      if extra_fields.get('is_superuser') is not True:
+          raise ValueError(_('Superuser must have is_superuser=True.'))
 
-  #     return self.create_user(roll_no, email, password, **extra_fields)
+      return self.create_user(roll_no, email, password, **extra_fields)
 
 # to create super user uncomment above user 
 
 # to create bulkUsers uncomment below code
 
 
-  def create_superuser(self,roll_no, email, password, **extra_fields):
-    """
-    Create and save a SuperUser with the given email and password.
-    """
-    extra_fields.setdefault('is_staff', False)
-    extra_fields.setdefault('is_superuser', False)
-    extra_fields.setdefault('is_active', True)
+  # def create_superuser(self,roll_no, email, password, **extra_fields):
+  #   """
+  #   Create and save a SuperUser with the given email and password.
+  #   """
+  #   extra_fields.setdefault('is_staff', False)
+  #   extra_fields.setdefault('is_superuser', False)
+  #   extra_fields.setdefault('is_active', True)
 
-    # if extra_fields.get('is_staff') is not True:
-    #     raise ValueError(_('Superuser must have is_staff=True.'))
-    # if extra_fields.get('is_superuser') is not True:
-    #     raise ValueError(_('Superuser must have is_superuser=True.'))
-    import csv
+  #   # if extra_fields.get('is_staff') is not True:
+  #   #     raise ValueError(_('Superuser must have is_staff=True.'))
+  #   # if extra_fields.get('is_superuser') is not True:
+  #   #     raise ValueError(_('Superuser must have is_superuser=True.'))
+  #   import csv
 
-    with open(r'/home/etamax/etamax2023/backend/users/data.csv', newline='') as csvfile:
-      spamreader = csv.reader(csvfile, delimiter=',', quotechar='|')
+  #   with open(r'/home/etamax/etamax2023/backend/users/data.csv', newline='') as csvfile:
+  #     spamreader = csv.reader(csvfile, delimiter=',', quotechar='|')
 
-      for row in spamreader:          
+  #     for row in spamreader:          
           
-          # AD, 5, 5@gmail.com, Comp, 5, 13pCqSnayL,
-          # row.pop()
-          #print(row)
-          # row.pop(7)
-          # print(row)
-          [name, roll_no, email, department, semester, password, phone_no] = row
-          # roll_no=
-          roll_no = roll_no.replace(',','')
-          roll_no = roll_no.replace(' ','')
-          semester = semester.replace(',','')
-          semester = semester.replace(' ','')
-          password = password.replace(',','')
-          password = password.replace(' ','')
-          department = department.replace(',','')
-          department = department.replace(' ','')
-          email = email.replace(',','')
-          email = email.replace(' ','')
-          phone_no = phone_no.replace(',','')
-          phone_no = phone_no.replace(' ','')
-          name = name.replace(',','')
-          print(password)
-          # if you want to createsuperuser create_user(....) instead of create_user_bulk(...) and add true to superuser and staff and comment above code. 56-66 line
-          self.create_user_bulk(name,roll_no, email,semester,department, password,phone_no,**extra_fields)
+  #         # AD, 5, 5@gmail.com, Comp, 5, 13pCqSnayL,
+  #         # row.pop()
+  #         #print(row)
+  #         # row.pop(7)
+  #         # print(row)
+  #         [name, roll_no, email, department, semester, password, phone_no] = row
+  #         # roll_no=
+  #         roll_no = roll_no.replace(',','')
+  #         roll_no = roll_no.replace(' ','')
+  #         semester = semester.replace(',','')
+  #         semester = semester.replace(' ','')
+  #         password = password.replace(',','')
+  #         password = password.replace(' ','')
+  #         department = department.replace(',','')
+  #         department = department.replace(' ','')
+  #         email = email.replace(',','')
+  #         email = email.replace(' ','')
+  #         phone_no = phone_no.replace(',','')
+  #         phone_no = phone_no.replace(' ','')
+  #         name = name.replace(',','')
+  #         print(password)
+  #         # if you want to createsuperuser create_user(....) instead of create_user_bulk(...) and add true to superuser and staff and comment above code. 56-66 line
+  #         self.create_user_bulk(name,roll_no, email,semester,department, password,phone_no,**extra_fields)
             
-      # create_users()    
-    return self.create_user_bulk(name,roll_no, email,semester,department, password,phone_no, **extra_fields)
+  #     # create_users()    
+  #   return self.create_user_bulk(name,roll_no, email,semester,department, password,phone_no, **extra_fields)

@@ -198,7 +198,7 @@ const LoginOtherColleges = () => {
         });
         router.push("/");
       } else {
-        console.log(data);
+        // console.log(data);
         for (let x in data.errors) {
           errorToast({title: data.errors[x]});
         }
@@ -235,7 +235,7 @@ const LoginOtherColleges = () => {
 
 
   function login() {
-    console.log()
+    // console.log()
     const appVerifier = window.recaptchaVerifier;
     if (phoneVerification.status === PHONE_VERIFICATION_STATUS.NOT_SENT) {
       firebase
@@ -251,11 +251,11 @@ const LoginOtherColleges = () => {
         .catch(console.log);
       return;
     }
-    console.log("Here")
+    // console.log("Here")
     window.verify
       .confirm(phoneVerification.otp)
       .then((stuff) => {
-        console.log("In callback")
+        // console.log("In callback")
         setPhoneVerification((prev) => ({
           ...prev,
           status: PHONE_VERIFICATION_STATUS.SENT_VERIFIED

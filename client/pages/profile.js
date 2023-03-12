@@ -130,8 +130,8 @@ export default function Profile(props) {
     window.verify
       .confirm(OTP)
       .then((stuff) => {
-        console.log(stuff);
-        console.log(profile.phone_no+"phone")
+        // console.log(stuff);
+        // console.log(profile.phone_no+"phone")
         setPhoneSet(true);
         toast({
           title: "Phone verification succesful",

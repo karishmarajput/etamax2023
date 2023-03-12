@@ -8,8 +8,9 @@ from .models import User, UserRequest , Participation
 
 @admin.register(User)
 class UserAdmin(admin.ModelAdmin):
-  list_filter = ('is_phone_no_verified', 'has_filled_profile', 'is_from_fcrit','department', 'semester') #'money_owed')
+  list_filter = ('is_phone_no_verified', 'has_filled_profile', 'is_from_fcrit','department', 'semester','criteria') #'money_owed')
   search_fields = ('roll_no', 'name', 'email', 'phone_no')
+  list_display = ['roll_no','name', 'department','semester','criteria','phone_no',]
   actions = ['export_as_csv']
 
   @admin.action(description="Download Csv")
@@ -43,9 +44,9 @@ class UserAdmin(admin.ModelAdmin):
 
 @admin.register(UserRequest)
 class UserRequestAdmin(admin.ModelAdmin):
-  search_fields = ('name', 'email', 'phone_no')
-  list_filter = ('is_approved', 'department', 'semester')
-
+  search_fields = ('name', 'email', 'phone_no','college')
+  list_filter = ('is_approved', 'department', 'semester','college')
+  list_display = ['name', 'college', 'department','semester', 'is_approved','phone_no']
   actions = ['approve_user_request']
 
   @admin.action(description='Approve user request')
@@ -57,9 +58,21 @@ class UserRequestAdmin(admin.ModelAdmin):
 @admin.register(Participation)
 class ParticipationAdmin(admin.ModelAdmin):
   search_fields = ('part_id', 'team_name', 'transaction__upi_transaction_id', 'transaction__transaction_id', 'members__name', 'members__roll_no', 'members__email', 'event__title')
-  list_display = ['team_name', 'event', 'is_verified', 'transaction']
+  list_display = ['team_name', 'event','seats','day','category','amount','display_members','is_verified', 'transaction']
   list_filter = ('is_verified', 'event__title')
   actions = ['export_as_csv']
+
+  def day(self, obj):
+    return obj.event.day
+  def seats(self, obj):
+    return str(obj.event.seats)+"/"+str(obj.event.max_seats)
+  def category(self, obj):
+    return obj.event.category
+  def amount(self, obj):
+    return obj.event.entry_fee
+  def display_members(self, obj):
+    return ', '.join([str(member.roll_no) for member in obj.members.all()])
+  display_members.short_description = 'Members'
 
   @admin.action(description="Download Csv")
   def export_as_csv(self, request, queryset):

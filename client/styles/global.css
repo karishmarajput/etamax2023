@@ -16,7 +16,7 @@ body{
 }
 
 .homeBackground{
-  background-image: url("/background-etamax.png") !important;
+  background-image: url("/ETAMAX-Laptop.png") !important;
   background-size: 100% 100%;
   background-position: center;
   object-fit: contain;
@@ -95,7 +95,7 @@ body{
 
 @media screen and (max-width: 768px) {
   .homeBackground{
-    background-image: url("/mobile-etamax.png") !important;
+    background-image: url("/ETAMAX-Phone.png") !important;
     background-size: 100% 100%;
     background-position: center;
     object-fit: contain;

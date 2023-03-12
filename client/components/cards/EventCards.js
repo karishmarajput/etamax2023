@@ -165,7 +165,7 @@ export default function EventCard({ event }) {
         }
       })
       .catch((e) => {
-        console.log(e);
+        // console.log(e);
         toast({
           title: e.detail,
           position: "top-right",
@@ -462,7 +462,7 @@ export default function EventCard({ event }) {
             >
               <b style={{ marginLeft: "10px" }}>Event Venue</b>
               <Box p="10px">
-                {console.log(event.event_rules)}
+                {/* {console.log(event.event_rules)} */}
                 {event.event_rules ? (
                   
                   <ReactMarkdown

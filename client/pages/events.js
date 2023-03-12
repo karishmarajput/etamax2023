@@ -212,7 +212,7 @@ export default function Events(props) {
             
             >
               <Box w="80%">
-                <Heading color="red.800" fontSize="6xl">
+                <Heading color="red.800" fontSize="4xl">
                   OUR EXCITING EVENTS{" "}
                 </Heading>
               </Box>

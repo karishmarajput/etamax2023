@@ -119,7 +119,7 @@ export default function ToggleSidebar(){
       return <div ref={wrapperRef}>{props.children}</div>;
     }
     const ToggleSidebar = () => {
-        console.log('click');
+        // console.log('click');
         isOpen === true ? setIsopen(false) : setIsopen(true);
     }
 
