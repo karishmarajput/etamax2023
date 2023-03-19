@@ -7,6 +7,7 @@ import "@fontsource/birthstone-bounce";
 import Sponsors from "../components/misc/Sponsors";
 import FeaturedEvents from "../components/misc/FeaturedEvents";
 import { API_BASE_URL } from "../config";
+import Throwback from "../components/layout/Throwback";
 
 export default function Home(props) {
   const [over, setOver] = useState(false);
@@ -78,6 +79,7 @@ export default function Home(props) {
         </Flex>
         
         <FeaturedEvents events={props.events}  />
+        {/* <Throwback/> */}
         {/* <Sponsors /> */}
       </Layout>
     </>

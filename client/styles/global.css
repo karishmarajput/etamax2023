@@ -468,5 +468,10 @@ marquee div{
   .wrapper{
     padding: 0rem;
   }
+  .throwback{
+    width: 100%;
+    min-height: 100vh;
+    background-image: url('/throwbackPhoto.png');
+  }
 }
 
