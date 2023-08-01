@@ -32,10 +32,10 @@ export default function Component({
         // outline: "none",
       }}
       _active={{
-        bgColor: `purple.200`,
+        // bgColor: `purple.200`,
         backgroundSize: "100%",
         transition: "background 0s",
-        color: "purple.500",
+        // color: "purple.500",
         outline: "none",
       }}
       onClick={() => {
